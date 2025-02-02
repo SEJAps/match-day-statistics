@@ -1,0 +1,41 @@
+.team_names {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+}
+
+form.create_stats {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.form_control {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.vs {
+  font-weight: 900;
+  font-size: 1.8rem;
+  font-family: fantasy;
+}
+
+.btn_create {
+  background: green;
+  color: white;
+  padding: .33rem .66rem;
+  border-radius: .33rem;
+  border: 1px solid gray;
+}
+
+footer.footer {
+  display: flex;
+  justify-content: center;
+}
