@@ -1,34 +1,27 @@
 import { FC } from "react";
-import TeamInput from '../components/TeamInput';
-import { Actions } from '../components/Actions';
-import { Table } from '../components/Table';
+import TeamInput from '../components/create-stats/TeamInput';
+import { Actions } from '../components/actions/Actions';
+import { Table } from '../components/table/Table';
 import { RootState, useAppSelector } from '../store/store';
-import { UserPanel } from '../components/UserPanel';
+import { UserPanel } from '../components/panel/UserPanel';
+import { Container } from "../components/container/Container";
 export const Home: FC = () => {
 
   const { existStats } = useAppSelector((state: RootState) => state.stats)
   const { authentificate } = useAppSelector((state: RootState) => state.user);
-  return (
-    <div className="container">
-      {authentificate && (
-        <>
-          <TeamInput />
-          <UserPanel />
-          {existStats &&
-            <>
-              <div className="stats-container">
-                <div className="stats-display">
-                  <div id="statsTable">
-                    <Table />
-                  </div>
-                </div>
-              </div>
-              <Actions />
-            </>
-          }
-        </>
-      )
+  return (authentificate && (
+    <>
+      <TeamInput />
+      <UserPanel />
+      {existStats &&
+        <Container>
+          <Table />
+          <Actions />
+        </Container>
       }
-    </div>
+    </>
+  )
+
+
   )
 }

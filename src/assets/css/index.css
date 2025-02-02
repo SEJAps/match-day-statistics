@@ -27,7 +27,7 @@ body {
   overflow: hidden auto;
 }
 
-.container {
+/* .container {
   display: flex;
   flex-direction: column;
   max-width: 1200px;
@@ -190,10 +190,10 @@ body {
 
 .pdf-button:hover {
   background-color: #7B1FA2;
-}
+} */
 
 @media (max-width: 768px) {
-  .team-input {
+  /* .team-input {
     width: 100%;
     font-size: 16px;
   }
@@ -212,7 +212,7 @@ body {
   .pdf-button {
     width: 100%;
     margin: 5px 0;
-  }
+  } */
 }
 
 @media (prefers-color-scheme: light) {

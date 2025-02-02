@@ -1,10 +1,10 @@
 import { FC } from "react";
-import { RootState, useAppDispatch, useAppSelector } from "../store/store";
-import { login } from "../store/slices/userSlice";
-import { userLocalStorage } from "../utils";
+import { RootState, useAppDispatch, useAppSelector } from "../../store/store";
+import { login } from "../../store/slices/userSlice";
+import { userLocalStorage } from "../../utils";
 import loginCSS from "./login.module.css"
-import imageLogin from '../assets/Leonardo_Anime_XL_Estadisticas_de_futbol_combinalo_con_un_camp_3.png'
-import { EMAIL_BUSINESS, TILE_AP } from "../config";
+import imageLogin from '../../assets/Leonardo_Anime_XL_Estadisticas_de_futbol_combinalo_con_un_camp_3.png'
+import { EMAIL_BUSINESS, TILE_AP } from "../../config";
 import { Link } from "react-router";
 export const Login: FC = () => {
 

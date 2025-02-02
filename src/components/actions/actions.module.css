@@ -1,0 +1,34 @@
+.actions {
+  display: grid;
+  gap: .33rem;
+  padding: 1rem;
+  border-top: 2px solid sienna;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+}
+
+.button {
+  padding: .33rem .66rem;
+  border-radius: .15rem;
+  border: 1px solid silver;
+  font-weight: 400;
+  font-size: 1.2rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.download_button {
+  background: rgb(248, 217, 217);
+}
+
+.pdf_button {
+  background: rgb(240, 189, 189);
+}
+
+.reset_button {
+  background: rgb(253, 136, 136);
+}
+
+.save_button {
+  background: rgb(196, 245, 196);
+}

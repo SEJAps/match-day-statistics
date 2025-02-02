@@ -1,3 +1,5 @@
+import { ReactNode } from "react"
+
 // Objeto para almacenar las estadísticas
 export type InitialStats = {
   corners: number | string,
@@ -16,6 +18,9 @@ export type InitialStats = {
   goals: number | string
 }
 
+export type Props = {
+  children: ReactNode
+}
 
 export type TStats = {
   local: InitialStats,

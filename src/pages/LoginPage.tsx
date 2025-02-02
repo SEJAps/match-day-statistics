@@ -1,5 +1,5 @@
 import { FC, useEffect } from "react";
-import { Login } from "../components/Login";
+import { Login } from "../components/login/Login";
 import { useNavigate } from "react-router";
 import { RootState, useAppSelector } from "../store/store";
 

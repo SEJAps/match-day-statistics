@@ -3,24 +3,27 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgb(253, 224, 229);
-  z-index: 50;
-  border-bottom: 1px solid rgb(255, 198, 208);
+  background: inherit;
+
 }
 
 .user_email {
   font-size: medium;
-  color: rgb(252, 133, 155);
+  color: rgb(117, 117, 117);
 }
 
-button.logout {
-  border: 1px solid rgb(255, 198, 208);
+
+
+button.logout,
+button.clearStats {
+  border: 1px solid rgb(87, 87, 87);
   color: red;
   padding: .33rem .66rem;
   border-radius: .33rem;
   font-size: clamp(.9rem, 2.5vw, 1.2rem);
+}
+
+button.clearStats {
+  background: red;
+  color: white;
 }
