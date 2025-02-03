@@ -1,29 +1,51 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.busineTitle {
+  text-align: center;
+}
+
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
   background: inherit;
-
+  gap: 1rem;
 }
 
 .user_email {
-  font-size: medium;
+  font-size: large;
   color: rgb(117, 117, 117);
+  font-weight: 600;
 }
 
-
+.userActions {
+  display: flex;
+  gap: 1rem;
+}
 
 button.logout,
 button.clearStats {
-  border: 1px solid rgb(87, 87, 87);
-  color: red;
-  padding: .33rem .66rem;
+  border: none;
   border-radius: .33rem;
   font-size: clamp(.9rem, 2.5vw, 1.2rem);
+  background-color: transparent;
+}
+
+button.logout {
+  color: gray
 }
 
 button.clearStats {
-  background: red;
-  color: white;
+  color: darkred;
+}
+
+@media screen and (width>768px) {
+  .header {
+    flex-direction: row;
+  }
 }

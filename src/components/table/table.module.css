@@ -4,40 +4,21 @@
   width: 100%;
 }
 
-.thead,
-.tbody {
-  /* background: black; */
-
-}
-
-.thead {
-  border: none;
-}
-
-.tr {
-  /* background: blue; */
-}
-
-.tr {
-  /* background: yellow; */
-}
-
 .td {
   /* background: olivedrab; */
   text-align: center;
   text-transform: capitalize;
   font-weight: 400;
-  font-size: small;
-}
 
-.team__title {
-  display: inline-flex;
-  flex-direction: column;
-  width: 100%;
 }
 
 .title {
   font-size: 1.5rem;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-size: small;
+  background-color: red;
 }
 
 .nameTeam {

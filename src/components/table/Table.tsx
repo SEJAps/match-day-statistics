@@ -4,19 +4,20 @@ import { increment, decrement } from "../../store/slices/statsSlice";
 import tableCSS from './tablev.module.css'
 import { ArrowLeft } from "../../assets/icons/ArrowLeft";
 import { ArrowRight } from "../../assets/icons/ArrowRight";
+import { Container } from "../container/Container";
 
 export const Table: FC = () => {
   const { local, guest, guestName, localName } = useAppSelector(state => state.stats)
   const dispatch = useAppDispatch();
   return (
-    <>
+    <Container>
       <section className={tableCSS.thead}>
         <article className={tableCSS.tr}>
           <h2 className={tableCSS.title}>Local</h2>
           <h3 className={tableCSS.nameTeam}>{localName}</h3>
         </article>
         <article className={tableCSS.tr}>
-          <h2>Estadística</h2>
+          <h2 className={`${tableCSS.title} ${tableCSS.titlExtra}`}>Estadística</h2>
         </article>
         <article className={tableCSS.tr}>
           <h2 className={tableCSS.title}>Visitante</h2>
@@ -56,6 +57,6 @@ export const Table: FC = () => {
           </>
         )}
       </section>
-    </>
+    </Container>
   )
 }

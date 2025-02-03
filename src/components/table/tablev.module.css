@@ -2,13 +2,27 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
+  padding: 2rem 0 0 0;
 }
 
 .tr {
   display: grid;
   grid-template-rows: auto 1fr;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
+
+}
+
+.title {
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.titlExtra {
+  font-size: 1.4rem;
 }
 
 .tbody {
@@ -44,8 +58,10 @@
 
 .stat_value {
   font-weight: 900;
+  font-size: x-large;
 }
 
 .stat {
   text-transform: uppercase;
+  font-size: small;
 }

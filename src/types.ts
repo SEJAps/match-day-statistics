@@ -1,4 +1,4 @@
-import { ReactNode } from "react"
+import { ReactNode, SVGProps } from "react"
 
 // Objeto para almacenar las estadísticas
 export type InitialStats = {
@@ -34,4 +34,8 @@ export type DataMatch = TStats & {
     email: string,
     name: string
   }
+}
+
+export type SVGP = {
+  props?: SVGProps<SVGSVGElement>
 }

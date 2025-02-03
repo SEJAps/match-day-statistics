@@ -5,6 +5,7 @@ import { createStatsByMatchActive } from "../../utils";
 import { Container } from "../container/Container";
 import teaminputCSS from './teaminput.module.css'
 import imageLogin from '../../assets/Leonardo_Anime_XL_Estadisticas_de_futbol_combinalo_con_un_camp_3.png'
+import { Logout } from "../../assets/icons/Logout";
 const TeamInput = () => {
   const dispatch = useAppDispatch();
   const { localName, guestName, local, guest, existStats } = useAppSelector((state: RootState) => state.stats);
@@ -29,6 +30,9 @@ const TeamInput = () => {
   return authentificate && !existStats && (
 
     <Container>
+      <header className={teaminputCSS.header}>
+        <Logout />
+      </header>
       <form onSubmit={handlerSubmit} className={teaminputCSS.create_stats} style={{
         backgroundImage: `url(${imageLogin})`
       }}>

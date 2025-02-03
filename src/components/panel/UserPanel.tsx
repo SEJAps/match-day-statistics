@@ -1,23 +1,16 @@
 import { FC } from "react";
-import { logout } from "../../store/slices/userSlice";
-import { RootState, useAppDispatch, useAppSelector } from "../../store/store";
-import { removeStatsByMatchActive, removeUserLocalStorage } from "../../utils";
+import { RootState, useAppSelector } from "../../store/store";
 import userPanelCss from './user_panel.module.css'
 import { Container } from "../container/Container";
 import { Sticky } from "../Sticky";
+import { TILE_AP } from "../../config";
+import { Logout } from "../../assets/icons/Logout";
+import { TrashStats } from "../../assets/icons/TrashStats";
 
 export const UserPanel: FC = () => {
-  const dispatch = useAppDispatch();
   const { authentificate, user } = useAppSelector((state: RootState) => state.user)
   const { existStats } = useAppSelector((state: RootState) => state.stats)
-  const handlerLogout = () => {
-    dispatch(logout())
-    removeUserLocalStorage()
-  }
-  const handlerClearStats = () => {
-    removeStatsByMatchActive()
-    globalThis.location.reload()
-  }
+
   return authentificate && existStats && (
 
     <Sticky styles={{
@@ -25,11 +18,16 @@ export const UserPanel: FC = () => {
       background: 'white'
     }}>
       <Container>
-        <nav className={userPanelCss.nav}>
-          <i className={userPanelCss.user_email}>{user.name}</i>
-          <button className={userPanelCss.clearStats} onClick={handlerClearStats} type="button">Clear stats</button>
-          <button className={userPanelCss.logout} onClick={handlerLogout} type="button">Logout</button>
-        </nav>
+        <header className={userPanelCss.header}>
+          <h1 className={userPanelCss.busineTitle}>{TILE_AP}</h1>
+          <nav className={userPanelCss.nav}>
+            <i className={userPanelCss.user_email} title={user.name}>{user.name}</i>
+            <aside className={userPanelCss.userActions}>
+              <i title="Borrar estadísticas"><TrashStats /></i>
+              <i title="Cerrar sesión"><Logout /></i>
+            </aside>
+          </nav>
+        </header>
       </Container>
     </Sticky>
 
