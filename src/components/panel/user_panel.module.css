@@ -10,7 +10,7 @@
   padding: 0;
   margin: 0;
   font-size: 2rem;
-
+  color: rgb(255, 83, 83);
 }
 
 .nav {
@@ -46,7 +46,7 @@ button.logout {
 }
 
 button.clearStats {
-  color: darkred;
+  color: rgb(255, 83, 83);
 }
 
 @media screen and (width>768px) {

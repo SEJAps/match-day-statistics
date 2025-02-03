@@ -15,8 +15,8 @@ export const Actions: FC = () => {
   return authentificate && (
     <Container>
       <div className={actionsCSS.actions}>
-        <button className={`${actionsCSS.button} ${actionsCSS.save_button}`} onClick={handlerSaveStats}>Guardar Estadísticas</button>
-        <button className={`${actionsCSS.button} ${actionsCSS.reset_button}`} onClick={() => dispatch(resetStats())} >Reiniciar Estadísticas</button>
+        <button className={`${actionsCSS.button} ${actionsCSS.save_button}`} onClick={handlerSaveStats}>Guardar</button>
+        <button className={`${actionsCSS.button} ${actionsCSS.reset_button}`} onClick={() => dispatch(resetStats())} >Reiniciar</button>
         <button className={`${actionsCSS.button} ${actionsCSS.download_button}`} onClick={() => downloadCSV(stats)}>Descargar CSV</button>
         <button className={`${actionsCSS.button} ${actionsCSS.pdf_button}`} onClick={() => downloadPDF(stats)}>Descargar PDF</button>
       </div>

@@ -56,7 +56,7 @@ button.submit {
   padding: .5rem 1rem;
   border-radius: .33rem;
   border: 1px solid gray;
-  background: red;
+  background: rgb(255, 83, 83);
   color: white;
 }
 

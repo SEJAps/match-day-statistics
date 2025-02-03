@@ -1,9 +1,11 @@
 @import url(./normalize.css);
+@import url(./fonts.css);
 
 :root {
-  font-family: fantasy, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Sarabun", serif;
+  font-weight: 100;
+  font-style: normal;
   line-height: 1.5;
-  font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -15,205 +17,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-
 body {
-
   margin: 0;
   padding: 0;
-
   width: 100dvw;
   height: 100dvh;
   overflow: hidden auto;
 }
 
-/* .container {
-  display: flex;
-  flex-direction: column;
-  max-width: 1200px;
-  margin: 0 auto;
-
-}
-
-.team-names {
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-}
-
-.team-input {
-  padding: 10px;
-  font-size: 18px;
-  border: 2px solid #ddd;
-  border-radius: 5px;
-}
-
-.team__title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.vs {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-}
-
-.stats-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.team {
-  flex: 1;
-}
-
-.stat-control {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.stat-button {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.2s;
-  touch-action: manipulation;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.stat-button:hover {
-  transform: scale(1.1);
-}
-
-.sтат-button:active {
-  transform: scale(0.95);
-}
-
-.add-stat {
-  background-color: #4CAF50;
-}
-
-.subtract-stat {
-  background-color: #f44336;
-}
-
-.stat-value {
-  min-width: 40px;
-  display: inline-block;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.stat-buttons {
-  display: none;
-}
-
-.stats-display {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.stats-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.stats-table th,
-.stats-table td {
-  padding: 12px 8px;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
-  position: relative;
-}
-
-.stats-table th {
-  background-color: #f5f5f5;
-}
-
-.actions {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.reset-button,
-.download-button,
-.pdf-button {
-  padding: 15px 25px;
-  font-size: 18px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  touch-action: manipulation;
-}
-
-.reset-button {
-  background-color: #f44336;
-  color: white;
-}
-
-.download-button {
-  background-color: #2196F3;
-  color: white;
-}
-
-.pdf-button {
-  background-color: #9C27B0;
-  color: white;
-}
-
-.reset-button:hover {
-  background-color: #da190b;
-}
-
-.download-button:hover {
-  background-color: #0b7dda;
-}
-
-.pdf-button:hover {
-  background-color: #7B1FA2;
-} */
-
-@media (max-width: 768px) {
-  /* .team-input {
-    width: 100%;
-    font-size: 16px;
-  }
-
-  .stats-table th,
-  .stats-table td {
-    padding: 15px 5px;
-  }
-
-  .actions {
-    gap: 10px;
-  }
-
-  .reset-button,
-  .download-button,
-  .pdf-button {
-    width: 100%;
-    margin: 5px 0;
-  } */
-}
+@media (max-width: 768px) {}
 
 @media (prefers-color-scheme: light) {
   :root {
