@@ -72,9 +72,17 @@ button.submit {
 
 .info>address {
   font-weight: 600;
-  padding: 1rem;
-  font-size: 1.4rem;
+  padding: 2rem;
+  font-size: .9rem;
   display: inline-flex;
   align-items: center;
   gap: 2rem;
+}
+
+@media screen and (width> 768px) {
+  .info>address {
+
+    font-size: 1.4rem;
+
+  }
 }
