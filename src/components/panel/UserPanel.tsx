@@ -20,7 +20,10 @@ export const UserPanel: FC = () => {
   }
   return authentificate && existStats && (
 
-    <Sticky bg="rgb(223, 223, 223)">
+    <Sticky styles={{
+      borderBottom: "1px solid green",
+      background: 'white'
+    }}>
       <Container>
         <nav className={userPanelCss.nav}>
           <i className={userPanelCss.user_email}>{user.name}</i>

@@ -1,0 +1,51 @@
+.thead {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.tr {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.tbody {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.stat_control {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.stat_button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid silver;
+}
+
+.subtract_stat {
+  background-color: rgb(248, 126, 126);
+}
+
+.add_stat {
+  background-color: rgb(145, 245, 114);
+}
+
+.stat_value {
+  font-weight: 900;
+}
+
+.stat {
+  text-transform: uppercase;
+}

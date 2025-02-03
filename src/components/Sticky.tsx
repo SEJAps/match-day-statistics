@@ -1,18 +1,17 @@
-import { FC } from "react";
+import { CSSProperties, FC } from "react";
 import { Props } from "../types";
 
-interface Sticky {
-  bg?: string
+type Sticky = {
+  styles?: CSSProperties;
 }
 
-export const Sticky: FC<Props & Sticky> = ({ children, bg }) => {
+export const Sticky: FC<Props & Sticky> = ({ children, styles }) => {
 
   return (
     <section style={{
+      ...styles,
       position: 'sticky',
-
       top: '0',
-      background: bg,
       zIndex: 50
     }}>
       {children}
