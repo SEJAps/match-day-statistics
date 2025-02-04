@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, Fragment } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/store";
 import { increment, decrement } from "../../store/slices/statsSlice";
 import tableCSS from './tablev.module.css'
@@ -26,7 +26,7 @@ export const Table: FC = () => {
       </section>
       <section className={tableCSS.tbody}>
         {Object.keys(local).map((stat) =>
-          <>
+          <Fragment key={stat}>
             <div className={tableCSS.stat_control}>
               <button
                 className={`${tableCSS.stat_button} ${tableCSS.subtract_stat}`}
@@ -54,7 +54,7 @@ export const Table: FC = () => {
                 <ArrowRight />
               </button>
             </div>
-          </>
+          </Fragment>
         )}
       </section>
     </Container>
