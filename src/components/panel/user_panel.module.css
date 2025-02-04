@@ -2,14 +2,13 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  align-items: center;
 }
 
 .busineTitle {
   text-align: center;
   padding: 0;
   margin: 0;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: rgb(255, 83, 83);
 }
 
@@ -17,8 +16,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
   background: inherit;
+  padding: 0 .5rem;
   gap: 1rem;
 }
 
@@ -31,6 +30,7 @@
 .userActions {
   display: flex;
   gap: 1rem;
+  padding: .5rem;
 }
 
 button.logout,
@@ -52,5 +52,11 @@ button.clearStats {
 @media screen and (width>768px) {
   .header {
     flex-direction: row;
+    width: 100%;
   }
+
+  .busineTitle {
+    font-size: 2.2rem;
+  }
+
 }

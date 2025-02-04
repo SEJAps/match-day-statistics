@@ -1,12 +1,11 @@
 .container {
   width: 100%;
+  display: grid;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (width>1240px) {
   .container {
-    width: 100%;
-    max-width: 30dvw;
+    width: 60dvw;
     margin: 0 auto;
-    position: relative;
   }
 }
