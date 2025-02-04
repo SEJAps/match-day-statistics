@@ -106,7 +106,7 @@ export const MatchTimer = () => {
           <h3>Resumen del partido:</h3>
           <p>1ª Parte: {formatTime(state.firstHalfTime)} +{formatTime(state.firstHalfExtra)}</p>
           <p>2ª Parte: {formatTime(state.secondHalfTime)} +{formatTime(state.secondHalfExtra)}</p>
-          <button onClick={() => dispatch({ type: "RESET" })}>Reiniciar</button>
+          <button className={timeCSS.btnReset} onClick={() => dispatch({ type: "RESET" })}>Reiniciar</button>
         </div>
       )}
     </div>

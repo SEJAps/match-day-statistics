@@ -86,13 +86,20 @@ button.btnTime:hover:not(:disabled) {
   margin: 5px 0;
 }
 
-.results button {
+button.btnReset {
   background-color: #e91e63;
   font-size: 18px;
   margin-top: 10px;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 120px;
 }
 
-.results button:hover {
+button.btnReset:hover {
   background-color: #c2185b;
 }
 
