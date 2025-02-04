@@ -1,78 +1,113 @@
+/* MatchTimer.module.css */
+
+/* Contenedor principal del temporizador */
 .match_controls {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  font-family: Arial, sans-serif;
-  padding: 2rem 0;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  color: black;
+  width: 300px;
+  margin: 0 auto;
 }
 
 .half_controls {
   display: flex;
-  gap: 1rem;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
-button.btnTime {
-  padding: 12px 18px;
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
   font-size: 16px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease;
+  width: 120px;
 }
 
-button.btnTime:disabled {
-  background-color: #ccc;
-  color: #666;
+button:disabled {
+  background-color: #888;
   cursor: not-allowed;
 }
 
-button.btnTime :not(:disabled) {
-  background-color: #28a745;
-  color: white;
+button:hover:not(:disabled) {
+  background-color: #45a049;
 }
 
-button.btnTime :not(:disabled):hover {
-  background-color: #218838;
-}
-
+/* Temporizador principal */
 .timer_display {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 24px;
+  font-size: 36px;
   font-weight: bold;
-  margin-top: 1rem;
-  padding: 10px;
-  border-radius: 8px;
-  background: #222;
-  color: white;
-  width: 250px;
-  text-align: center;
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.timer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.timer_section {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  font-size: 30px;
-  font-family: "Digital-7", sans-serif;
+.timer_display span {
+  margin: 0 5px;
 }
 
 .timer_main {
-  font-size: 36px;
-  color: #0f0;
+  color: skyblue;
+  /* Color de la hora */
+  font-size: 48px;
+  font-weight: bold;
 }
 
 .extra-time {
   font-size: 24px;
-  color: red;
-  font-weight: bold;
+  color: #f44336;
+  /* Color del tiempo extra */
+}
+
+/* Resumen al finalizar el partido */
+.results {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.results h3 {
+  font-size: 24px;
+  color: #ffeb3b;
+  margin-bottom: 10px;
+}
+
+.results p {
+  font-size: 18px;
+  color: #fff;
+  margin: 5px 0;
+}
+
+.results button {
+  background-color: #e91e63;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.results button:hover {
+  background-color: #c2185b;
+}
+
+/* Estilos para las transiciones suaves en el contenedor */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.match_controls,
+.results {
+  animation: fadeIn 0.5s ease-in-out;
 }
