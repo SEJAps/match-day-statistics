@@ -80,18 +80,18 @@ export const MatchTimer = () => {
       {state.half !== "finished" ? (
         <>
           <div className={timeCSS.half_controls}>
-            <button onClick={() => dispatch({ type: "START_FIRST_HALF" })} disabled={state.half !== null}>
+            <button className={timeCSS.btnTime} onClick={() => dispatch({ type: "START_FIRST_HALF" })} disabled={state.half !== null}>
               Iniciar 1ª Parte
             </button>
-            <button onClick={() => dispatch({ type: "END_FIRST_HALF" })} disabled={state.half !== "first"}>
+            <button className={timeCSS.btnTime} onClick={() => dispatch({ type: "END_FIRST_HALF" })} disabled={state.half !== "first"}>
               Finalizar 1ª Parte
             </button>
           </div>
           <div className={timeCSS.half_controls}>
-            <button onClick={() => dispatch({ type: "START_SECOND_HALF" })} disabled={state.half !== "second"}>
+            <button className={timeCSS.btnTime} onClick={() => dispatch({ type: "START_SECOND_HALF" })} disabled={state.half !== "second"}>
               Iniciar 2ª Parte
             </button>
-            <button onClick={() => dispatch({ type: "END_SECOND_HALF" })} disabled={state.half !== "second"}>
+            <button className={timeCSS.btnTime} onClick={() => dispatch({ type: "END_SECOND_HALF" })} disabled={state.half !== "second"}>
               Finalizar 2ª Parte
             </button>
           </div>

@@ -18,7 +18,7 @@
   margin-bottom: 15px;
 }
 
-button {
+button.btnTime {
   background-color: #4CAF50;
   color: white;
   padding: 10px 20px;
@@ -30,12 +30,12 @@ button {
   width: 120px;
 }
 
-button:disabled {
+button.btnTime:disabled {
   background-color: #888;
   cursor: not-allowed;
 }
 
-button:hover:not(:disabled) {
+button.btnTime:hover:not(:disabled) {
   background-color: #45a049;
 }
 
