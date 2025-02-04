@@ -4,12 +4,12 @@ import { Actions } from '../components/actions/Actions';
 import { Table } from '../components/table/Table';
 import { RootState, useAppSelector } from '../store/store';
 import { UserPanel } from '../components/panel/UserPanel';
-import { MatchTimer } from "../components/splittime/SplitTime";
+import { MatchTimer } from "../components/matchtimer/MatchTimer";
 export const Home: FC = () => {
 
   const { existStats } = useAppSelector((state: RootState) => state.stats)
   const { authentificate } = useAppSelector((state: RootState) => state.user);
-  return (authentificate && (
+  return authentificate && (
     <>
       <TeamInput />
       <UserPanel />
@@ -21,8 +21,5 @@ export const Home: FC = () => {
         </>
       }
     </>
-  )
-
-
   )
 }
