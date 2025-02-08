@@ -20,8 +20,7 @@ export const UserPanel: FC = () => {
     }}>
       <Container>
         <header className={userPanelCss.header}>
-          <Title level={1}>{TILE_AP}</Title>
-          <h1 className={userPanelCss.busineTitle}>{TILE_AP}</h1>
+          <Title className={userPanelCss.busineTitle} level={1}>{TILE_AP}</Title>
           <nav className={userPanelCss.nav}>
             <i className={userPanelCss.user_email} title={user.name}>{user.name}</i>
             <aside className={userPanelCss.userActions}>
