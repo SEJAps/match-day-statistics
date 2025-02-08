@@ -2,6 +2,7 @@ import { ReactNode, SVGProps } from "react"
 
 // Objeto para almacenar las estadísticas
 export type InitialStats = {
+  goals: number | string,
   center_attacks: number | string,
   right_attacks: number | string,
   left_attacks: number | string,
@@ -15,9 +16,10 @@ export type InitialStats = {
   goal_chances: number | string,
   goal_cahances_in: number | string,
   merit_stop: number | string,
-  goals: number | string
+
 }
 export interface TeamStats {
+  goals: number,
   center_attacks: number,
   right_attacks: number,
   left_attacks: number,
@@ -31,7 +33,7 @@ export interface TeamStats {
   goal_chances: number,
   goal_cahances_in: number,
   merit_stop: number,
-  goals: number
+
 }
 export type TTeam = "local" | "guest"
 export type Props = {

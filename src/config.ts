@@ -3,6 +3,7 @@ const TILE_AP = 'Match day stats';
 const BUSINESS = 'Sports stats';
 const EMAIL_BUSINESS = "matchdaystatsmds@gmail.com"
 const initialStat = {
+  goals: 0,
   center_attacks: 0,
   right_attacks: 0,
   left_attacks: 0,
@@ -16,11 +17,12 @@ const initialStat = {
   goal_chances: 0,
   goal_cahances_in: 0,
   merit_stop: 0,
-  goals: 0
+
 } as InitialStats
 
 
 const statNames = {
+  goals: 'Goles',
   center_attacks: 'Ataques por Centro',
   right_attacks: 'Ataques por Derecha',
   left_attacks: 'Ataques por Izquierda',
@@ -34,7 +36,7 @@ const statNames = {
   goal_chances: 'Ocasiones de Gol',
   goal_cahances_in: 'Ocasiones de Gol 3 palos',
   merit_stop: 'Parada de merito',
-  goals: 'Goles'
+
 } as InitialStats
 export {
   TILE_AP,
@@ -42,5 +44,4 @@ export {
   EMAIL_BUSINESS,
   statNames,
   initialStat,
-
 }
