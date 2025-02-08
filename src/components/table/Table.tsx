@@ -1,4 +1,4 @@
-import { FC, Fragment } from "react";
+import { FC, Fragment, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/store";
 import { increment, decrement } from "../../store/slices/statsSlice";
 import tableCSS from './tablev.module.css'
@@ -6,13 +6,31 @@ import { ArrowLeft } from "../../assets/icons/ArrowLeft";
 import { ArrowRight } from "../../assets/icons/ArrowRight";
 import { Container } from "../container/Container";
 import MatchTimer from "../matchtimer/MatchTimer";
+import { TTeam } from "../../types";
+import { StatAction } from "../stat-action/StatAction";
+
+
+interface ILocation { team: TTeam, stat: string }
+
 
 export const Table: FC = () => {
   const { local, guest, guestName, localName } = useAppSelector(state => state.stats)
+  const [currentStatAction, setCurrentStatAction] = useState<ILocation>()
+
   const dispatch = useAppDispatch();
+
+  const updateDecrementStat = ({ team, stat }: ILocation) => {
+    setCurrentStatAction({ team, stat })
+    dispatch(decrement({ team, stat: stat as keyof typeof local, value: -1 }))
+  }
+
   return (
     <Container>
       <>
+        {currentStatAction && <>
+          <StatAction stat={currentStatAction.stat} />
+          {JSON.stringify(currentStatAction)}
+        </>}
         <MatchTimer />
         <section className={tableCSS.thead}>
           <article className={tableCSS.tr}>
@@ -26,6 +44,7 @@ export const Table: FC = () => {
             <h2 className={tableCSS.title}>Visitante</h2>
             <h3 className={tableCSS.nameTeam}>{guestName}</h3>
           </article>
+
         </section>
         <section className={tableCSS.tbody}>
           {Object.keys(local).map((stat) =>
@@ -33,7 +52,7 @@ export const Table: FC = () => {
               <div className={tableCSS.stat_control}>
                 <button
                   className={`${tableCSS.stat_button} ${tableCSS.subtract_stat}`}
-                  onClick={() => dispatch(decrement({ team: "local", stat: stat as keyof typeof local, value: -1 }))}>
+                  onClick={() => updateDecrementStat({ team: "local", stat })}>
                   <ArrowLeft />
                 </button>
                 <span className={tableCSS.stat_value}>{local[stat as keyof typeof local]}</span>

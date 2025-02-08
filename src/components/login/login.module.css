@@ -35,9 +35,7 @@ form.login {
   gap: 2rem;
   justify-content: center;
   align-items: center;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+
 }
 
 form.login>input {

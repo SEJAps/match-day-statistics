@@ -17,7 +17,7 @@ export type InitialStats = {
   chances: number | string,
   goals: number | string
 }
-
+export type TTeam = "local" | "guest"
 export type Props = {
   children: ReactNode
 }

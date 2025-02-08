@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { initialStat } from "../../config";
 import { createStatsByMatchActive, getStatsByMatchActive, getUserLocalStorage } from "../../utils";
+import { TTeam } from "../../types";
 
 const matchActive = getStatsByMatchActive();
 const user = getUserLocalStorage();
@@ -59,7 +60,7 @@ const statsSlice = createSlice({
         state.guest[key as keyof TeamStats] = 0;
       });
     },
-    updateTeamName: (state, action: PayloadAction<{ team: "local" | "guest"; name: string }>) => {
+    updateTeamName: (state, action: PayloadAction<{ team: TTeam; name: string }>) => {
       state[action.payload.team === "local" ? "localName" : "guestName"] = action.payload.name;
     },
     saveStats: (state) => {

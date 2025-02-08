@@ -1,9 +1,10 @@
 import { FC } from "react";
-import TeamInput from '../components/create-stats/TeamInput';
 import { Actions } from '../components/actions/Actions';
 import { Table } from '../components/table/Table';
 import { RootState, useAppSelector } from '../store/store';
 import { UserPanel } from '../components/panel/UserPanel';
+import TeamInput from '../components/create-stats/TeamInput';
+
 export const Home: FC = () => {
 
   const { existStats } = useAppSelector((state: RootState) => state.stats)

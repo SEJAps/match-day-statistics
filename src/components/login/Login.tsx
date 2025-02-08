@@ -3,7 +3,6 @@ import { RootState, useAppDispatch, useAppSelector } from "../../store/store";
 import { login } from "../../store/slices/userSlice";
 import { userLocalStorage } from "../../utils";
 import loginCSS from "./login.module.css"
-import imageLogin from '../../assets/Leonardo_Anime_XL_Estadisticas_de_futbol_combinalo_con_un_camp_3.png'
 import { EMAIL_BUSINESS, TILE_AP } from "../../config";
 import { Link } from "react-router";
 export const Login: FC = () => {
@@ -28,9 +27,7 @@ export const Login: FC = () => {
       </header>
 
       <article className={loginCSS.article}>
-        <form className={loginCSS.login} onSubmit={handlerSubmit} style={{
-          backgroundImage: `url(${imageLogin})`
-        }}>
+        <form className={loginCSS.login} onSubmit={handlerSubmit}>
           <input type="email" id="email" name="email" placeholder='Tu correo electrónico' required autoComplete="on" />
           <input type="text" id="name" name="name" placeholder='Tu nombre o apodo' required autoComplete="on" />
           <aside>
