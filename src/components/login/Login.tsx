@@ -5,6 +5,7 @@ import { userLocalStorage } from "../../utils";
 import loginCSS from "./login.module.css"
 import { EMAIL_BUSINESS, TILE_AP } from "../../config";
 import { Link } from "react-router";
+import Layout from "../../layouts/Layout";
 export const Login: FC = () => {
 
   const { authentificate } = useAppSelector((state: RootState) => state.user);
@@ -21,26 +22,28 @@ export const Login: FC = () => {
 
 
   return !authentificate && (
-    <section className={loginCSS.center} >
-      <header className={loginCSS.header}>
-        <h1 className={loginCSS.title}>{TILE_AP}</h1>
-      </header>
+    <Layout src="./webp/imagen_login_stats.webp">
+      <section className={loginCSS.center} >
+        <header className={loginCSS.header}>
+          <h1 className={loginCSS.title}>{TILE_AP}</h1>
+        </header>
 
-      <article className={loginCSS.article}>
-        <form className={loginCSS.login} onSubmit={handlerSubmit}>
-          <input type="email" id="email" name="email" placeholder='Tu correo electrónico' required autoComplete="on" />
-          <input type="text" id="name" name="name" placeholder='Tu nombre o apodo' required autoComplete="on" />
-          <aside>
-            <button className={loginCSS.submit} type="submit">Login</button>
-          </aside>
-        </form>
-        <footer className={loginCSS.info}>
-          <address>
-            <img src="./android-chrome-192x192.png" alt="logo" width={48} height={48} />
-            <Link to={`mailto:${EMAIL_BUSINESS}`}>{EMAIL_BUSINESS}</Link>
-          </address>
-        </footer>
-      </article>
-    </section >
+        <article className={loginCSS.article}>
+          <form className={loginCSS.login} onSubmit={handlerSubmit}>
+            <input type="email" id="email" name="email" placeholder='Tu correo electrónico' required autoComplete="on" />
+            <input type="text" id="name" name="name" placeholder='Tu nombre o apodo' required autoComplete="on" />
+            <aside>
+              <button className={loginCSS.submit} type="submit">Login</button>
+            </aside>
+          </form>
+          <footer className={loginCSS.info}>
+            <address>
+              <img src="./android-chrome-192x192.png" alt="logo" width={48} height={48} />
+              <Link to={`mailto:${EMAIL_BUSINESS}`}>{EMAIL_BUSINESS}</Link>
+            </address>
+          </footer>
+        </article>
+      </section >
+    </Layout>
   )
 }
