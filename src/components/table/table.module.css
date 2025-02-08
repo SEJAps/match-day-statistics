@@ -1,15 +1,18 @@
-.table {
-  border: none;
-  border-spacing: 0;
-  width: 100%;
+.thead {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem 0 0 0;
+  border-bottom: 1px solid gray;
+  padding: 2rem 0;
 }
 
-.td {
-  /* background: olivedrab; */
-  text-align: center;
-  text-transform: capitalize;
-  font-weight: 400;
-
+.tr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .33rem;
 }
 
 .title {
@@ -17,60 +20,76 @@
   text-align: center;
   padding: 0;
   margin: 0;
-  font-size: small;
-  background-color: rgb(255, 83, 83);
+  font-size: 1.3rem;
 }
 
-.nameTeam {
-  font-size: 1.2rem;
+.titlExtra {
+  font-size: 1.4rem;
+}
+
+.tbody {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
 }
 
 .stat_control {
-  /* background: burlywood; */
-  display: inline-flex;
-  justify-content: space-around;
+  display: flex;
+  justify-content: space-evenly;
   align-items: center;
-  gap: .15rem;
-  width: 100%;
-  padding: .5rem .15rem;
-
-  border-bottom: 1px solid black;
 }
 
 .stat_button {
-  color: white;
-  padding: 1rem;
   display: inline-flex;
-  justify-content: center;
   align-items: center;
-  width: 32px;
-  height: 32px;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  border: none;
+  border: 1px solid silver;
+  color: snow;
 }
 
 .subtract_stat {
-  background: rgb(255, 83, 83);
-
-}
-
-.stat_value {
-  font-weight: bolder;
-  font-size: 1.5rem;
+  background-color: rgb(255, 83, 83);
 }
 
 .add_stat {
-  background: green;
+  background-color: rgb(122, 249, 83);
 }
 
-@media screen and (width >=768px) {
-  .title {
-    font-size: 1.8rem;
-  }
+.stat_value {
+  font-weight: 900;
+  font-size: x-large;
 }
 
-@media screen and (width >=1024px) {
-  .title {
-    font-size: 2.2rem;
-  }
+.stat {
+  text-transform: uppercase;
+  font-size: small;
+}
+
+.nameTeam {
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.goal {
+  color: #184180;
+  text-align: center;
+  font-size: 4rem;
+  font-family: "Prompt", serif;
+  font-weight: 900;
+  font-style: normal;
+  background-color: rgb(249, 255, 232);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  width: 80px;
+  height: 80px;
+  border: 2px solid rgba(134, 201, 134, 0.295);
+  border-radius: .33rem;
 }

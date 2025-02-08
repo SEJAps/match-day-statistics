@@ -1,7 +1,7 @@
 import { FC, Fragment, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/store";
 import { increment, decrement } from "../../store/slices/statsSlice";
-import tableCSS from './tablev.module.css'
+import tableCSS from './table.module.css'
 import { ArrowLeft } from "../../assets/icons/ArrowLeft";
 import { ArrowRight } from "../../assets/icons/ArrowRight";
 import { Container } from "../container/Container";
@@ -35,6 +35,7 @@ export const Table: FC = () => {
         <section className={tableCSS.thead}>
           <article className={tableCSS.tr}>
             <h2 className={tableCSS.title}>Local</h2>
+            <strong className={tableCSS.goal}>{local.goals}</strong>
             <h3 className={tableCSS.nameTeam}>{localName}</h3>
           </article>
           <article className={tableCSS.tr}>
@@ -42,6 +43,7 @@ export const Table: FC = () => {
           </article>
           <article className={tableCSS.tr}>
             <h2 className={tableCSS.title}>Visitante</h2>
+            <strong className={tableCSS.goal}>{guest.goals}</strong>
             <h3 className={tableCSS.nameTeam}>{guestName}</h3>
           </article>
 

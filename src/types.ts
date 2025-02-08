@@ -2,19 +2,19 @@ import { ReactNode, SVGProps } from "react"
 
 // Objeto para almacenar las estadísticas
 export type InitialStats = {
-  corners: number | string,
-  offsides: number | string,
-  rightAttacks: number | string,
-  leftAttacks: number | string,
-  centerAttacks: number | string,
+  center_attacks: number | string,
+  right_attacks: number | string,
+  left_attacks: number | string,
+  player_cahanges: number | string,
   crosses: number | string,
+  corners: number | string,
   fouls: number | string,
-  dangerousFouls: number | string,
-  penalties: number | string,
-  yellowCards: number | string,
-  redCards: number | string,
-  throwIns: number | string,
+  dangerous_fouls: number | string,
+  offsides: number | string,
   chances: number | string,
+  goal_chances: number | string,
+  goal_cahances_in: number | string,
+  merit_stop: number | string,
   goals: number | string
 }
 export type TTeam = "local" | "guest"
