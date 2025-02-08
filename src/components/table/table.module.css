@@ -65,8 +65,9 @@
 }
 
 .stat {
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-size: small;
+  text-align: center;
 }
 
 .nameTeam {

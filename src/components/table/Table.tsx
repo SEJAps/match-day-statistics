@@ -9,15 +9,14 @@ import { Container } from "../container/Container";
 import MatchTimer from "../matchtimer/MatchTimer";
 import { TTeam } from "../../types";
 // import { StatAction } from "../stat-action/StatAction";
-
-
+import { useTranslation } from 'react-i18next';
 interface ILocation { team: TTeam, stat: string }
 
 
 export const Table: FC = () => {
   const { local, guest, guestName, localName } = useAppSelector(state => state.stats)
   // const [currentStatAction, setCurrentStatAction] = useState<ILocation>()
-
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
   const updateDecrementStat = ({ team, stat }: ILocation) => {
@@ -35,6 +34,7 @@ export const Table: FC = () => {
         <MatchTimer />
         <section className={tableCSS.thead}>
           <article className={tableCSS.tr}>
+
             <h2 className={tableCSS.title}>Local</h2>
             <strong className={tableCSS.goal}>{local.goals}</strong>
             <h3 className={tableCSS.nameTeam}>{localName}</h3>
@@ -58,6 +58,7 @@ export const Table: FC = () => {
                   onClick={() => updateDecrementStat({ team: "local", stat })}>
                   <ArrowLeft />
                 </button>
+
                 <span className={tableCSS.stat_value}>{local[stat as keyof typeof local]}</span>
                 <button
                   className={`${tableCSS.stat_button} ${tableCSS.add_stat}`}
@@ -66,7 +67,7 @@ export const Table: FC = () => {
                 </button>
               </div>
               <div className={tableCSS.stat_control}>
-                <strong className={tableCSS.stat}>{stat}</strong>
+                <strong className={tableCSS.stat}>{t(stat)}</strong>
               </div>
               <div className={tableCSS.stat_control}>
                 <button className={`${tableCSS.stat_button} ${tableCSS.subtract_stat}`}
