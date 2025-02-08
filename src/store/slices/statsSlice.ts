@@ -1,26 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { initialStat } from "../../config";
 import { createStatsByMatchActive, getStatsByMatchActive, getUserLocalStorage } from "../../utils";
-import { TTeam } from "../../types";
+import { TeamStats, TTeam } from "../../types";
 
 const matchActive = getStatsByMatchActive();
 const user = getUserLocalStorage();
-interface TeamStats {
-  corners: number;
-  offsides: number;
-  rightAttacks: number;
-  leftAttacks: number;
-  centerAttacks: number;
-  crosses: number;
-  fouls: number;
-  dangerousFouls: number;
-  penalties: number;
-  yellowCards: number;
-  redCards: number;
-  throwIns: number;
-  chances: number;
-  goals: number;
-}
+
 
 interface StatsState {
   local: TeamStats;
