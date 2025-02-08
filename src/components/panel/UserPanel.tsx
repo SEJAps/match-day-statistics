@@ -6,6 +6,7 @@ import { Sticky } from "../Sticky";
 import { TILE_AP } from "../../config";
 import { Logout } from "../../assets/icons/Logout";
 import { TrashStats } from "../../assets/icons/TrashStats";
+import { Title } from "../title/Title";
 
 export const UserPanel: FC = () => {
   const { authentificate, user } = useAppSelector((state: RootState) => state.user)
@@ -19,6 +20,7 @@ export const UserPanel: FC = () => {
     }}>
       <Container>
         <header className={userPanelCss.header}>
+          <Title level={1}>{TILE_AP}</Title>
           <h1 className={userPanelCss.busineTitle}>{TILE_AP}</h1>
           <nav className={userPanelCss.nav}>
             <i className={userPanelCss.user_email} title={user.name}>{user.name}</i>

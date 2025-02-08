@@ -1,5 +1,5 @@
 import { InitialStats } from "./types"
-const TILE_AP = 'Match day statistics';
+const TILE_AP = 'Match day stats';
 const BUSINESS = 'Sports stats';
 const EMAIL_BUSINESS = "matchdaystatsmds@gmail.com"
 const initialStat = {
