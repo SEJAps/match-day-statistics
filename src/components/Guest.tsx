@@ -8,7 +8,7 @@ export const Guest: FC<{ stat: InitialStats }> = ({ stat }) => {
   return (<td>
     <div className="stat-control">
       <button className="stat-button subtract-stat" onClick={() => updateStat('team1', '${stat}', -1)}>-</button>
-      <span className="stat-value">{stat.centerAttacks}</span>
+      <span className="stat-value">{stat.center_attacks}</span>
       <button className="stat-button add-stat" onClick={() => updateStat('team1', '${stat}', 1)}>+</button>
     </div>
   </td>)
