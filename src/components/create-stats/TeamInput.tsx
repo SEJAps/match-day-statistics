@@ -4,8 +4,8 @@ import { useAppDispatch, useAppSelector } from "../../store/store";
 import { createStatsByMatchActive } from "../../utils";
 import { Container } from "../container/Container";
 import teaminputCSS from './teaminput.module.css'
-import imageLogin from '../../assets/Leonardo_Anime_XL_Estadisticas_de_futbol_combinalo_con_un_camp_3.png'
 import { Logout } from "../../assets/icons/Logout";
+import Layout from "../../layouts/Layout";
 const TeamInput = () => {
   const dispatch = useAppDispatch();
   const { localName, guestName, local, guest, existStats } = useAppSelector((state: RootState) => state.stats);
@@ -29,37 +29,37 @@ const TeamInput = () => {
 
   return authentificate && !existStats && (
 
-    <Container>
-      <header className={teaminputCSS.header}>
-        <Logout />
-      </header>
-      <form onSubmit={handlerSubmit} className={teaminputCSS.create_stats} style={{
-        backgroundImage: `url(${imageLogin})`
-      }}>
-        <article className={teaminputCSS.form_control}>
-          <input
-            type="text"
-            id="name__local"
-            name="name__local"
-            className="team-input"
-            defaultValue={localName}
-            placeholder="Equipo Local"
-          />
-          <span className={teaminputCSS.vs}>VS</span>
-          <input
-            type="text"
-            id="name__guest"
-            name="name__guest"
-            className="team-input"
-            defaultValue={guestName}
-            placeholder="Equipo Visitante"
-          />
-        </article>
-        <footer className={teaminputCSS.footer}>
-          <button className={teaminputCSS.btn_create} type="submit">Crear estadística</button>
-        </footer>
-      </form>
-    </Container>
+    <Layout src="./addteams.jpg">
+      <Container>
+        <header className={teaminputCSS.header}>
+          <Logout />
+        </header>
+        <form onSubmit={handlerSubmit} className={teaminputCSS.create_stats}>
+          <article className={teaminputCSS.form_control}>
+            <input
+              type="text"
+              id="name__local"
+              name="name__local"
+              className="team-input"
+              defaultValue={localName}
+              placeholder="Equipo Local"
+            />
+            <span className={teaminputCSS.vs}>VS</span>
+            <input
+              type="text"
+              id="name__guest"
+              name="name__guest"
+              className="team-input"
+              defaultValue={guestName}
+              placeholder="Equipo Visitante"
+            />
+          </article>
+          <footer className={teaminputCSS.footer}>
+            <button className={teaminputCSS.btn_create} type="submit">Crear estadística</button>
+          </footer>
+        </form>
+      </Container>
+    </Layout>
 
 
   );
