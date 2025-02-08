@@ -14,10 +14,11 @@
 }
 
 .title {
-  font-family: 'Times New Roman', Times, serif;
-  color: red;
-  font-size: clamp(1.9rem, 2.5vw, 2rem);
   text-transform: uppercase;
+  animation: scale1 1200ms alternate ease-in-out infinite;
+  text-shadow: 10px 10px 3px rgba(0, 0, 0, .5);
+  color: var(--color-busine-title);
+
 }
 
 .article {
@@ -82,5 +83,15 @@ button.submit {
 
     font-size: 1.4rem;
 
+  }
+}
+
+@keyframes scale1 {
+  to {
+    transform: scale(1);
+  }
+
+  from {
+    transform: scale(.98);
   }
 }

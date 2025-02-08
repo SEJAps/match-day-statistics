@@ -5,11 +5,9 @@
 }
 
 .busineTitle {
-  text-align: center;
-  padding: 0;
-  margin: 0;
-  font-size: 2.5rem;
   color: rgb(255, 83, 83);
+  text-align: center;
+
 }
 
 .nav {

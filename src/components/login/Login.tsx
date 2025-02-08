@@ -6,6 +6,7 @@ import loginCSS from "./login.module.css"
 import { EMAIL_BUSINESS, TILE_AP } from "../../config";
 import { Link } from "react-router";
 import Layout from "../../layouts/Layout";
+import { Title } from "../title/Title";
 export const Login: FC = () => {
 
   const { authentificate } = useAppSelector((state: RootState) => state.user);
@@ -25,7 +26,9 @@ export const Login: FC = () => {
     <Layout src="./webp/imagen_login_stats.webp">
       <section className={loginCSS.center} >
         <header className={loginCSS.header}>
-          <h1 className={loginCSS.title}>{TILE_AP}</h1>
+          <Title className={loginCSS.title}>
+            {TILE_AP}
+          </Title>
         </header>
 
         <article className={loginCSS.article}>

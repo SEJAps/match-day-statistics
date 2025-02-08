@@ -1,6 +1,7 @@
 @import url(./normalize.css);
 @import url(./fonts.css);
 
+
 :root {
   font-family: "Sarabun", serif;
   font-weight: 100;
@@ -14,12 +15,19 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --color-busine-title: snow;
 }
 
 body {
   margin: 0;
   padding: 0;
   overflow: hidden auto;
+}
+
+h1 {
+  font-family: "Prompt", serif;
+  font-weight: 900;
+  font-style: normal;
 }
 
 @media (max-width: 768px) {}
