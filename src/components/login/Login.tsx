@@ -42,7 +42,7 @@ export const Login: FC = () => {
           <footer className={loginCSS.info}>
             <address>
               <img src="./android-chrome-192x192.png" alt="logo" width={48} height={48} />
-              <Link to={`mailto:${EMAIL_BUSINESS}`}>{EMAIL_BUSINESS}</Link>
+              <Link className="email" to={`mailto:${EMAIL_BUSINESS}`}>{EMAIL_BUSINESS}</Link>
             </address>
           </footer>
         </article>

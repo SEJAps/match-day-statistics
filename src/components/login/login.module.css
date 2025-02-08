@@ -1,8 +1,7 @@
 .center {
   display: grid;
   grid-auto-flow: row;
-  grid-template-rows: auto 1fr;
-
+  grid-template-rows: .8fr 1fr;
   height: 100dvh;
 }
 
@@ -11,6 +10,7 @@
   padding: 1rem;
   align-items: center;
   justify-content: center;
+
 }
 
 .title {
@@ -18,14 +18,12 @@
   animation: scale1 1200ms alternate ease-in-out infinite;
   text-shadow: 10px 10px 3px rgba(0, 0, 0, .5);
   color: var(--color-busine-title);
-
 }
 
 .article {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 form.login {
@@ -34,29 +32,31 @@ form.login {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  justify-content: center;
   align-items: center;
-
 }
 
 form.login>input {
-  padding: .5rem 1rem;
+  padding: 1rem;
   border-radius: .33rem;
   border: 1px solid gray;
-  font-size: clamp(1.3rem, 2.5vw, 1rem);
+  font-size: clamp(1.4rem, 2.5vw, 1rem);
+
 }
 
 aside {
   display: flex;
-  justify-content: end;
 }
 
 button.submit {
-  padding: .5rem 1rem;
+  padding: .8rem 1.56rem;
   border-radius: .33rem;
-  border: 1px solid gray;
+  border: 1px solid white;
   background: rgb(255, 83, 83);
   color: white;
+  font-size: 1.2rem;
+  font-family: "Sarabun", serif;
+  font-weight: 700;
+  font-style: normal
 }
 
 .info {

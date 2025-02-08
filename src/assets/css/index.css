@@ -4,7 +4,7 @@
 
 :root {
   font-family: "Sarabun", serif;
-  font-weight: 100;
+  font-weight: 300;
   font-style: normal;
   line-height: 1.5;
   color-scheme: light dark;
@@ -40,6 +40,10 @@ h1 {
 
   a:hover {
     color: #747bff;
+  }
+
+  a.email {
+    color: snow;
   }
 
   button {
