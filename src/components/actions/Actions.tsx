@@ -4,8 +4,10 @@ import { RootState, useAppDispatch, useAppSelector } from "../../store/store";
 import { resetStats, saveStats } from "../../store/slices/statsSlice";
 import actionsCSS from './actions.module.css'
 import { Container } from "../container/Container";
+import { useTranslation } from "react-i18next";
 
 export const Actions: FC = () => {
+  const { t } = useTranslation();
   const stats = useAppSelector((state: RootState) => state.stats)
   const { authentificate } = useAppSelector((state: RootState) => state.user);
   const handlerSaveStats = () => {
@@ -15,10 +17,10 @@ export const Actions: FC = () => {
   return authentificate && (
     <Container>
       <div className={actionsCSS.actions}>
-        <button className={`${actionsCSS.button} ${actionsCSS.save_button}`} onClick={handlerSaveStats}>Guardar</button>
-        <button className={`${actionsCSS.button} ${actionsCSS.reset_button}`} onClick={() => dispatch(resetStats())} >Reiniciar</button>
-        <button className={`${actionsCSS.button} ${actionsCSS.download_button}`} onClick={() => downloadCSV(stats)}>Descargar CSV</button>
-        <button className={`${actionsCSS.button} ${actionsCSS.pdf_button}`} onClick={() => downloadPDF(stats)}>Descargar PDF</button>
+        <button className={`${actionsCSS.button} ${actionsCSS.save_button}`} onClick={handlerSaveStats}>{t("keep")} {t("stats")}</button>
+        <button className={`${actionsCSS.button} ${actionsCSS.reset_button}`} onClick={() => dispatch(resetStats())} >{t("reboot")}</button>
+        <button className={`${actionsCSS.button} ${actionsCSS.download_button}`} onClick={() => downloadCSV(stats)}>{t("keep")} CSV</button>
+        <button className={`${actionsCSS.button} ${actionsCSS.pdf_button}`} onClick={() => downloadPDF(stats)}>{t("keep")} PDF</button>
       </div>
     </Container>
   )

@@ -6,11 +6,12 @@ import { Container } from "../container/Container";
 import teaminputCSS from './teaminput.module.css'
 import { Logout } from "../../assets/icons/Logout";
 import Layout from "../../layouts/Layout";
+import { useTranslation } from "react-i18next";
 const TeamInput = () => {
   const dispatch = useAppDispatch();
   const { localName, guestName, local, guest, existStats } = useAppSelector((state: RootState) => state.stats);
   const { authentificate, user } = useAppSelector((state: RootState) => state.user);
-
+  const { t } = useTranslation();
   const handlerSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
@@ -42,7 +43,7 @@ const TeamInput = () => {
               name="name__local"
               className="team-input"
               defaultValue={localName}
-              placeholder="Equipo Local"
+              placeholder={`${t("team")} ${t("local")}`}
             />
             <span className={teaminputCSS.vs}>VS</span>
             <input
@@ -51,11 +52,11 @@ const TeamInput = () => {
               name="name__guest"
               className="team-input"
               defaultValue={guestName}
-              placeholder="Equipo Visitante"
+              placeholder={`${t("team")} ${t("visitor")}`}
             />
           </article>
           <footer className={teaminputCSS.footer}>
-            <button className={teaminputCSS.btn_create} type="submit">Crear estadística</button>
+            <button className={teaminputCSS.btn_create} type="submit">{t("create_stats")}</button>
           </footer>
         </form>
       </Container>

@@ -11,6 +11,9 @@ const Layout: FC<Props> = ({ children, src }) => {
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '1rem'
   }}>
     {children}
   </section>

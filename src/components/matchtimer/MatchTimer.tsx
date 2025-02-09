@@ -1,5 +1,6 @@
 import { useReducer, useEffect } from "react";
 import timeCSS from "./MatchTimer.module.css";
+import { useTranslation } from "react-i18next";
 
 // Definimos los tipos de acción
 type ActionType =
@@ -62,7 +63,7 @@ const matchReducer = (state: typeof initialState, action: ActionType): typeof in
 
 export const MatchTimer = () => {
   const [state, dispatch] = useReducer(matchReducer, initialState, () => initialState);
-
+  const { t } = useTranslation();
   useEffect(() => {
     if (!state.isRunning) return;
     const timer = setInterval(() => dispatch({ type: "TICK" }), 1000);
@@ -81,32 +82,32 @@ export const MatchTimer = () => {
         <>
           <div className={timeCSS.half_controls}>
             <button className={timeCSS.btnTime} onClick={() => dispatch({ type: "START_FIRST_HALF" })} disabled={state.half !== null}>
-              Iniciar 1ª Parte
+              {t("start")} 1ª {t("part")}
             </button>
             <button className={timeCSS.btnTime} onClick={() => dispatch({ type: "END_FIRST_HALF" })} disabled={state.half !== "first"}>
-              Finalizar 1ª Parte
+              {t("finish")} 1ª {t("part")}
             </button>
           </div>
           <div className={timeCSS.half_controls}>
             <button className={timeCSS.btnTime} onClick={() => dispatch({ type: "START_SECOND_HALF" })} disabled={state.half !== "second"}>
-              Iniciar 2ª Parte
+              {t("start")} 2ª {t("part")}
             </button>
             <button className={timeCSS.btnTime} onClick={() => dispatch({ type: "END_SECOND_HALF" })} disabled={state.half !== "second"}>
-              Finalizar 2ª Parte
+              {t("finish")} 2ª {t("part")}
             </button>
           </div>
           <div className={timeCSS.timer_display}>
-            <span>{state.half === "first" ? "1ª Parte:" : "2ª Parte:"}</span>
+            <span>{state.half === "first" ? t("part") : `2ª ${t("part")}:`}</span>
             <span className={timeCSS.timer_main}>{formatTime(state.time)}</span>
             {state.extraTime > 0 && <span className="extra-time">+{formatTime(state.extraTime)}</span>}
           </div>
         </>
       ) : (
         <div className={timeCSS.results}>
-          <h3>Resumen del partido:</h3>
-          <p>1ª Parte: {formatTime(state.firstHalfTime)} +{formatTime(state.firstHalfExtra)}</p>
-          <p>2ª Parte: {formatTime(state.secondHalfTime)} +{formatTime(state.secondHalfExtra)}</p>
-          <button className={timeCSS.btnReset} onClick={() => dispatch({ type: "RESET" })}>Reiniciar</button>
+          <h3> {t("match_summary")}:</h3>
+          <p>1ª {t("part")}: {formatTime(state.firstHalfTime)} +{formatTime(state.firstHalfExtra)}</p>
+          <p>2ª {t("part")}: {formatTime(state.secondHalfTime)} +{formatTime(state.secondHalfExtra)}</p>
+          <button className={timeCSS.btnReset} onClick={() => dispatch({ type: "RESET" })}>{t("reboot")}</button>
         </div>
       )}
     </div>

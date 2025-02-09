@@ -3,4 +3,6 @@ h1.busine {
   font-weight: 900;
   font-style: normal;
   font-size: clamp(2.5rem, 2.5vw, 2rem);
+  margin: 0;
+  padding: 0;
 }

@@ -30,9 +30,13 @@
 .tbody {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr;
   gap: 1rem;
   padding: 1rem 0;
+
 }
+
+
 
 .stat_control {
   display: flex;
@@ -41,19 +45,15 @@
 }
 
 .stat_button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
   border: 1px solid silver;
   color: snow;
+  width: 32px;
+  height: 32px;
 }
 
-.subtract_stat {
+/* .subtract_stat {
   background-color: rgb(255, 83, 83);
-}
+} */
 
 .add_stat {
   background-color: rgb(122, 249, 83);

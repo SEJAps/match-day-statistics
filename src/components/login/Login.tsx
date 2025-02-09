@@ -7,11 +7,12 @@ import { EMAIL_BUSINESS, TILE_AP } from "../../config";
 import { Link } from "react-router";
 import Layout from "../../layouts/Layout";
 import { Title } from "../title/Title";
+import { useTranslation } from "react-i18next";
 export const Login: FC = () => {
 
   const { authentificate } = useAppSelector((state: RootState) => state.user);
   const dispatch = useAppDispatch();
-
+  const { t } = useTranslation();
   const handlerSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formControl = new FormData(event.target as HTMLFormElement);
@@ -33,10 +34,10 @@ export const Login: FC = () => {
 
         <article className={loginCSS.article}>
           <form className={loginCSS.login} onSubmit={handlerSubmit}>
-            <input type="email" id="email" name="email" placeholder='Tu correo electrónico' required autoComplete="on" />
-            <input type="text" id="name" name="name" placeholder='Tu nombre o apodo' required autoComplete="on" />
+            <input type="email" id="email" name="email" placeholder={t("your_email")} required autoComplete="on" />
+            <input type="text" id="name" name="name" placeholder={t("your_name")} required autoComplete="on" />
             <aside>
-              <button className={loginCSS.submit} type="submit">Login</button>
+              <button className={loginCSS.submit} type="submit">{t("login")}</button>
             </aside>
           </form>
           <footer className={loginCSS.info}>
