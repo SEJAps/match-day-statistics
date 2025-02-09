@@ -6,21 +6,19 @@ import { UserPanel } from '../components/panel/UserPanel';
 import TeamInput from '../components/create-stats/TeamInput';
 import Layout from "../layouts/Layout";
 import UserPanelLayout from "../layouts/UserPanelLayout";
-import { Modal } from "../components/modal/Modal";
-import { Title } from "../components/title/Title";
-import { useGlobalCtx } from "../store/hooks/useGlobalCtx";
+import { ModalSelectTeam } from "../components/modal/ModalSelectTeam";
+import { SelectTeam } from "../components/select-team/SelectTeam";
+// import { useTranslation } from "react-i18next";
 
 export const Home: FC = () => {
-  const { isOpenModal } = useGlobalCtx()
+  // const { t } = useTranslation()
   const { existStats } = useAppSelector((state: RootState) => state.stats)
   const { authentificate } = useAppSelector((state: RootState) => state.user);
   return authentificate && (
     <Layout>
-      {isOpenModal && <Modal>
-        <button>Local</button>
-        <Title level={1}>VS</Title>
-        <button>Visitante</button>
-      </Modal>}
+      <ModalSelectTeam nameModal="team">
+        <SelectTeam />
+      </ModalSelectTeam>
       <TeamInput />
       <UserPanel />
       {existStats &&
