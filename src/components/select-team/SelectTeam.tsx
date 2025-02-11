@@ -2,7 +2,8 @@ import { FC } from "react";
 import { RootState, useAppSelector } from "../../store/store";
 import { useGlobalCtx } from "../../store/hooks/useGlobalCtx";
 import { ModalAddMark } from "../modal/ModalAddMark";
-import viewMarks from '../../assets/webp/zonas_campo.webp'
+import { MarkStat } from "../mark-stat/Mark";
+
 
 export const SelectTeam: FC = () => {
   const { localName, guestName } = useAppSelector((state: RootState) => state.stats)
@@ -13,20 +14,7 @@ export const SelectTeam: FC = () => {
   return (
     <>
       <ModalAddMark nameModal="view">
-        <section style={{
-          display: 'grid',
-          justifyContent: 'center',
-          alignItems: 'center',
-          width: '100svw',
-          height: '100svh',
-          background: 'gray',
-          backgroundImage: `url(${viewMarks})`,
-          backgroundSize: '100vw 100vh',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}>
-
-        </section>
+        <MarkStat />
       </ModalAddMark>
       <button style={{
         display: 'inline-flex',
@@ -37,7 +25,6 @@ export const SelectTeam: FC = () => {
         justifyContent: 'center',
         border: '1px solid silver',
         backgroundColor: 'transparent',
-        borderRadius: '8px',
         color: 'silver',
         textShadow: '2px 2px 1px black'
       }} onClick={handlerViewAddMArk}>
@@ -62,7 +49,6 @@ export const SelectTeam: FC = () => {
         justifyContent: 'center',
         border: '1px solid silver',
         backgroundColor: 'transparent',
-        borderRadius: '8px',
         color: 'silver',
         textShadow: '2px 2px 1px black'
       }} onClick={handlerViewAddMArk}>

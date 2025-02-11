@@ -1,13 +1,14 @@
 import { FC } from "react"
 import imgPng from './Picture2.png'
 
-export const StatAction: FC<{ stat: string }> = ({ stat }) => {
+export const StatAction: FC = () => {
+
+
+
+
   return (
-    <section>
-      <h2>{stat}</h2>
-      <article>
-        <img src={imgPng} alt={'Campo selección'} />
-      </article>
-    </section>
+    <article>
+      <img src={imgPng} alt={'Campo selección'} />
+    </article>
   )
 }
