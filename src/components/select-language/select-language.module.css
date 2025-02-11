@@ -1,20 +1,24 @@
 .lang {
   display: inline-flex;
-
   gap: 1rem;
 }
 
 .label {
-  display: flex;
+  display: inline-flex;
+  align-items: center;
   gap: 1rem;
-  padding: 0 .5rem;
+  padding: 0 1rem;
+  font-size: small;
 }
 
 .strong {
   font-weight: 900;
+  color: gray;
 }
 
 .select {
-  width: 5rem;
-  padding: .33rem .66rem;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: .33rem .5rem;
+  font-size: large;
 }

@@ -2,6 +2,7 @@ import { FC, useEffect } from "react";
 import { Login } from "../components/login/Login";
 import { useNavigate } from "react-router";
 import { RootState, useAppSelector } from "../store/store";
+import { SelectLanguage } from "../components/select-language/SelectLanguage";
 
 export const LoginPage: FC = () => {
   const navigation = useNavigate()
@@ -10,6 +11,20 @@ export const LoginPage: FC = () => {
     if (authentificate) navigation("/")
   }, [authentificate, navigation])
   return (
-    <Login />
+    <>
+      <div style={{
+        position: "absolute",
+        top: '0',
+        left: '0',
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'end',
+        alignItems: 'center',
+        height: '60px'
+      }}>
+        <SelectLanguage />
+      </div>
+      <Login />
+    </>
   )
 }

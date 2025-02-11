@@ -14,14 +14,14 @@ export const SelectLanguage: FC = () => {
   }
   return (<div className={selecLngCSS.lang}>
     <label className={selecLngCSS.label} htmlFor="lang">
-
+      <strong className={selecLngCSS.strong}>{t('select_language')}</strong>
       <select className={selecLngCSS.select} id="lang" name="lang" onInput={handlerInput}>
         <option value="es">ES</option>
+        <option value="ca">CAT</option>
         <option value="en">EN</option>
-        <option value="ca">Cat</option>
         <option value="fr">FR</option>
       </select>
-      <strong className={selecLngCSS.strong}>{t('select_language')}</strong>
+
     </label>
   </div>)
 }
