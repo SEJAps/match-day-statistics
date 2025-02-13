@@ -1,24 +1,38 @@
-import { FC, useEffect } from "react";
-// import desktop from './picture-desktop-899x604.webp';
-// import tablet from './picture-tablet-768x516.webp';
-// import mobile from './picture-mobile-375x667.webp';
-import marcasCSS from './marcas.module.css'
-import ImgRes from "../../components/ImgRes";
-
+import { FC, useState } from "react";
+import MdsCanvas from "../../components/atoms/canvas/MdsCanvas";
+import campo from "../../assets/webp/zonas_campo_new.webp"
+import Icono_falta from "../../assets/webp/Icono_falta.webp"
 const Marcas: FC = () => {
+  const [marks, setMarks] = useState<{ x: number; y: number }[]>([]);
 
-  useEffect(() => {
-
-  })
+  const handleCanvasClick = (x: number, y: number) => {
+    setMarks((prevMarks) => [...prevMarks, { x, y }]);
+  };
 
   return (
-    <section className={marcasCSS.campo}>
+    <div style={{
+      position: 'relative',
+      width: '100%',
+      height: '100svh',
+      overflow: 'clip',
+      backgroundImage: `url(${campo})`,
+      backgroundSize: '100% 100%',
+    }}>
+      <MdsCanvas onCanvasClick={handleCanvasClick} />
+      {marks.map((mark, index) => (
+        <div
+          key={index}
+          style={{
+            left: `${mark.x}px`, top: `${mark.y}px`, transform: "translate(-50%, -50%)", position: 'absolute',
+            width: '64px',
+            height: '64px',
+            backgroundImage: `url(${Icono_falta})`,
+            backgroundSize: 'cover',
+            borderRadius: '50%'
+          }}
+        ></div>
+      ))}
+    </div>);
+};
 
-
-      <ImgRes />
-
-    </section>
-  )
-}
-
-export default Marcas;
+export default Marcas
