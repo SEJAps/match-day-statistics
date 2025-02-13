@@ -2,11 +2,14 @@ import { FC, useState } from "react";
 import MdsCanvas from "../../components/atoms/canvas/MdsCanvas";
 import campo from "../../assets/webp/zonas_campo_new.webp"
 import Icono_falta from "../../assets/webp/Icono_falta.webp"
+import { useParams } from "react-router";
+
 const Marcas: FC = () => {
   const [marks, setMarks] = useState<{ x: number; y: number }[]>([]);
-
+  const { team } = useParams();
   const handleCanvasClick = (x: number, y: number) => {
     setMarks((prevMarks) => [...prevMarks, { x, y }]);
+
   };
 
   return (
@@ -18,6 +21,14 @@ const Marcas: FC = () => {
       backgroundImage: `url(${campo})`,
       backgroundSize: '100% 100%',
     }}>
+      <h1 style={{
+        position: 'fixed',
+        top: '0',
+        margin: '0',
+        color: 'white',
+        textTransform: 'capitalize',
+        padding: '1rem'
+      }}>{team}</h1>
       <MdsCanvas onCanvasClick={handleCanvasClick} />
       {marks.map((mark, index) => (
         <div
