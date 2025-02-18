@@ -1,7 +1,7 @@
 import jsPDF from "jspdf";
 import autoTable from 'jspdf-autotable'
 import { TStats } from "./types";
-
+import i18n from "./features/i18n"
 
 const downloadCSV = (stats: TStats) => {
   const { local, guest, localName, guestName } = stats;
@@ -9,7 +9,7 @@ const downloadCSV = (stats: TStats) => {
   let csvContent = `Estadística,${localName},${guestName}\n`;
 
   Object.keys(local).forEach((stat) => {
-    csvContent += `${stat},${local[stat as keyof typeof local]},${guest[stat as keyof typeof guest]}\n`;
+    csvContent += `${i18n.t(stat)},${local[i18n.t(stat) as keyof typeof local]},${guest[i18n.t(stat) as keyof typeof guest]}\n`;
   });
 
   const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
@@ -32,18 +32,18 @@ const downloadPDF = (stats: TStats) => {
 
   // Título del PDF
   doc.setFontSize(16);
-  doc.text(`Estadísticas: ${localName} vs ${guestName}`, 14, 20);
+  doc.text(`${i18n.t("stats")}: ${localName} vs ${guestName}`, 14, 20);
 
   // Preparar datos para la tabla
   const tableData = Object.keys(local).map((stat) => [
     local[stat as keyof typeof local],
-    stat,
+    i18n.t(stat),
     guest[stat as keyof typeof guest],
   ]);
 
   // Crear la tabla
   autoTable(doc, {
-    head: [[localName, "Estadística", guestName]],
+    head: [[localName, i18n.t("stats"), guestName]],
     body: tableData,
     theme: "grid",
     headStyles: {
