@@ -15,7 +15,6 @@ const initialStat = {
   fouls: 0,
   dangerous_fouls: 0,
   offsides: 0,
-  chances: 0,
   goal_cahances_in: 0,
   merit_stop: 0,
   shoot_out: 0
@@ -33,7 +32,6 @@ const statNames = {
   fouls: 'Faltas',
   dangerous_fouls: 'Faltas Peligrosas',
   offsides: 'Fueras de Juego',
-  chances: 'Ocasión',
   goal_cahances_in: 'Ocasiones de Gol 3 palos',
   merit_stop: 'Parada de merito',
   shoot_out: 'Tiros fuera'

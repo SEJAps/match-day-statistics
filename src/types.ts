@@ -11,7 +11,7 @@ export type InitialStats = {
   fouls: number | string,
   dangerous_fouls: number | string,
   offsides: number | string,
-  chances: number | string,
+
   goal_cahances_in: number | string,
   merit_stop: number | string,
   shoot_out: number | string,
@@ -26,7 +26,7 @@ export interface TeamStats {
   fouls: number,
   dangerous_fouls: number,
   offsides: number,
-  chances: number,
+
   goal_cahances_in: number,
   merit_stop: number,
   shoot_out: number,

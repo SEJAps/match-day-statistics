@@ -4,7 +4,7 @@ import check_verde from "./check_verde.webp"
 import Icono_falta from "../svg/falta_512x512.svg"
 import Icono_falta_peligrosa from "../svg/falta_peligrosa_512x512.svg"
 import Icono_fuera_de_juego from "../svg/fuera_de juego_512x512.svg"
-import Icono_ocasion from "./Icono_ocasion.webp"
+
 import Icono_tiro_3_palos from "../svg/tiro_a_puerta 512x512.svg"
 import Icono_tiro_fuera from "../svg/tiro_fuera_512x512.svg"
 import Icono_parada from "../svg/parada_512x512.svg"
@@ -60,10 +60,6 @@ const statIcons = [
   {
     stat: "offsides",
     src: Icono_fuera_de_juego
-  },
-  {
-    stat: "chances",
-    src: Icono_ocasion
   },
   {
     stat: "goal_cahances_in",
