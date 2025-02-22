@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  background-color: #353d47;
 }
 
 .busineTitle {
@@ -18,9 +19,8 @@
   gap: 1rem;
 }
 
-.user_email {
+.name {
   font-size: large;
-  color: rgb(117, 117, 117);
   font-weight: 600;
 }
 

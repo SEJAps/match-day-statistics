@@ -2,11 +2,15 @@ import { configureStore } from '@reduxjs/toolkit'
 import { useDispatch, useSelector } from 'react-redux'
 import statsReducer from './slices/statsSlice'
 import userReducer from './slices/userSlice'
+import timerReducer from './slices/timerSlice'
+import newTimerReducer from './slices/newTimerSlice'
 
 const store = configureStore({
   reducer: {
     stats: statsReducer,
-    user: userReducer
+    user: userReducer,
+    timer: timerReducer, 
+    newTimer: newTimerReducer
   },
 })
 // Infer the `RootState` and `AppDispatch` types from the store itself

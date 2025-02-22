@@ -31,18 +31,18 @@ export const Table: FC = () => {
         {Object.keys(local).map((stat) =>
           <Fragment key={stat}>
             <div className={tableCSS.stat_control}>
-              <CheckRojo onClick={() => updateDecrementStat({ team: "local", stat })} />
+              <CheckRojo image_down onClick={() => updateDecrementStat({ team: "local", stat })} />
               <span className={tableCSS.stat_value}>{local[stat as keyof typeof local]}</span>
-              <CheckVerde onClick={() => dispatch(increment({ team: "local", stat: stat as keyof typeof local, value: 1 }))} />
+              <CheckVerde image_down onClick={() => dispatch(increment({ team: "local", stat: stat as keyof typeof local, value: 1 }))} />
 
             </div>
             <div className={tableCSS.stat_control}>
               <strong className={tableCSS.stat}>{t(stat)}</strong>
             </div>
             <div className={tableCSS.stat_control}>
-              <CheckRojo onClick={() => dispatch(decrement({ team: "guest", stat: stat as keyof typeof guest, value: -1 }))} />
+              <CheckRojo image_down onClick={() => dispatch(decrement({ team: "guest", stat: stat as keyof typeof guest, value: -1 }))} />
               <span className={tableCSS.stat_value}>{guest[stat as keyof typeof guest]}</span>
-              <CheckVerde onClick={() => dispatch(increment({ team: "guest", stat: stat as keyof typeof guest, value: 1 }))} />
+              <CheckVerde image_down onClick={() => dispatch(increment({ team: "guest", stat: stat as keyof typeof guest, value: 1 }))} />
             </div>
           </Fragment>
         )}

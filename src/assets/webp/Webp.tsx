@@ -1,26 +1,27 @@
 import { FC } from "react"
 import check_rojo from "./check_rojo.webp"
 import check_verde from "./check_verde.webp"
-import Icono_falta from "./Icono_falta.webp"
-import Icono_falta_peligrosa from "./Icono_falta_peligrosa.webp"
-import Icono_fuera_de_juego from "./Icono_fuera_de_juego.webp"
+import Icono_falta from "../svg/falta_512x512.svg"
+import Icono_falta_peligrosa from "../svg/falta_peligrosa_512x512.svg"
+import Icono_fuera_de_juego from "../svg/fuera_de juego_512x512.svg"
 import Icono_ocasion from "./Icono_ocasion.webp"
-import Icono_tiro_3_palos from "./Icono_tiro_3_palos.webp"
-import Icono_tiro_fuera from "./Icono_tiro_fuera.webp"
-import Icono_parada from "./Icono_parada.webp"
-import Icono_gol from "./Icono_gol.webp"
-import Icono_ataque_centro from "./Icono_ataque_centro.webp"
-import Icono_ataque_derecha from "./Icono_ataque_derecha.webp"
-import Icono_ataque_izquierda from "./Icono_ataque_izquierda.webp"
-import Icono_centro_area from "./Icono_centro-area.webp"
-import Icono_corner from "./Icono_corner.webp"
+import Icono_tiro_3_palos from "../svg/tiro_a_puerta 512x512.svg"
+import Icono_tiro_fuera from "../svg/tiro_fuera_512x512.svg"
+import Icono_parada from "../svg/parada_512x512.svg"
+import Icono_gol from "../svg/gol_512x512.svg"
+import Icono_ataque_centro from "../svg/ataque_centro_512x512.svg"
+import Icono_ataque_derecha from "../svg/ataque_derecha_512x512.svg"
+import Icono_ataque_izquierda from "../svg/ataque_izquierda_512x512.svg"
+import Icono_centro_area from "../svg/centro_al_area_512x512.svg"
+import Icono_corner from "../svg/corner_512x512.svg"
 import webpCSS from './webp.module.css'
-import { useTranslation } from "react-i18next"
+// import { useTranslation } from "react-i18next"
 
 type TImage = {
   src: string,
   alt: string,
   title?: string,
+  image_down?: boolean,
   onClick: () => void
 }
 const statIcons = [
@@ -77,22 +78,22 @@ const statIcons = [
     src: Icono_tiro_fuera
   }
 ]
-const ImageWebp: FC<TImage> = ({ src, alt, onClick, title }) => {
-  return <img onClick={onClick} className={`${webpCSS.image} ${webpCSS.icon}`} src={src} alt={alt} width={32} height={32} title={title} />
+const ImageWebp: FC<TImage> = ({ src, alt, onClick, title, image_down }) => {
+  return <img onClick={onClick} className={`${image_down ? webpCSS.image_down : webpCSS.image} ${webpCSS.icon}`} src={src} alt={alt} width={32} height={32} title={title} />
 }
 
-const CheckRojo: FC<{ onClick: () => void }> = ({ onClick }) => {
-  return (<ImageWebp onClick={onClick} src={check_rojo} alt="Check Rojo" />)
+const CheckRojo: FC<{ onClick: () => void, image_down?:boolean }> = ({ onClick, image_down }) => {
+  return (<ImageWebp image_down={image_down} onClick={onClick} src={check_rojo} alt="Check Rojo" />)
 }
-const CheckVerde: FC<{ onClick: () => void }> = ({ onClick }) => {
-  return (<ImageWebp onClick={onClick} src={check_verde} alt="Check Rojo" />)
+const CheckVerde: FC<{ onClick: () => void , image_down?:boolean}> = ({ onClick,image_down }) => {
+  return (<ImageWebp image_down={image_down} onClick={onClick} src={check_verde} alt="Check Rojo" />)
 }
 
 const IconStat: FC<{ onClick: () => void, title?: string, stat: string }> = ({ onClick, title, stat }) => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   return (<button className={webpCSS.btn}>
     <ImageWebp onClick={onClick} src={(statIcons.find(record => record.stat === stat.toLowerCase()))?.src as string} alt={stat} title={title} />
-    <small>{t(stat)}</small>
+    {/* <small>{t(stat)}</small> */}
   </button>)
 }
 export {

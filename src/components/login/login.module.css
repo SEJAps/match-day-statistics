@@ -61,23 +61,38 @@ button.submit {
 
 .info {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+  padding-bottom: .33rem;
 }
 
 .info>address {
   font-weight: 600;
-  padding: 2rem;
   font-size: .9rem;
   display: inline-flex;
   align-items: center;
   gap: 2rem;
 }
-
+.created_by {
+  display: inline-flex;
+  gap: .33rem;
+  color: white;
+  font-size: medium;
+  font-weight: lighter;
+  & a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
+  & a:hover {
+    color: rgb(122, 241, 128);
+    text-decoration: underline;
+  }
+}
 @media screen and (width> 768px) {
   .info>address {
 

@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import MdsCanvas from "../../components/atoms/canvas/MdsCanvas";
 import campo from "../../assets/webp/zonas_campo_new.webp"
-import Icono_falta from "../../assets/webp/Icono_falta.webp"
+import Icono_falta from "../../assets/svg/falta_512x512.svg"
 import { useParams } from "react-router";
 
 const Marcas: FC = () => {

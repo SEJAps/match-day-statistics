@@ -8,8 +8,6 @@
   font-style: normal;
   line-height: 1.5;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
   font-size: clamp(.9rem, 2.5vw, 1.1rem);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -23,7 +21,10 @@ body {
   padding: 0;
   overflow: hidden auto;
 }
-
+#root {
+  background-color: #353d47;
+  color: rgba(255, 255, 255, 0.87);
+}
 h1 {
   font-family: "Prompt", serif;
   font-weight: 900;

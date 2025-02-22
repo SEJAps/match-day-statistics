@@ -4,10 +4,12 @@ import { login } from "../../store/slices/userSlice";
 import { userLocalStorage } from "../../utils";
 import loginCSS from "./login.module.css"
 import { EMAIL_BUSINESS, TILE_AP } from "../../config";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 import Layout from "../../layouts/Layout";
 import { Title } from "../title/Title";
 import { useTranslation } from "react-i18next";
+import logo from "../../assets/webp/MDS_blanco.webp"
+// import logo2 from "../../assets/svg/match_day_stats_logo.svg"
 export const Login: FC = () => {
 
   const { authentificate } = useAppSelector((state: RootState) => state.user);
@@ -42,9 +44,11 @@ export const Login: FC = () => {
           </form>
           <footer className={loginCSS.info}>
             <address>
-              <img src="./android-chrome-192x192.png" alt="logo" width={48} height={48} />
+              <img src={logo} alt="logo" width={128} height={96} />
               <Link className="email" to={`mailto:${EMAIL_BUSINESS}`}>{EMAIL_BUSINESS}</Link>
             </address>
+           <strong className={loginCSS.created_by}>&copy; <time dateTime="2024-02-01">2024</time> Creado por <NavLink to={`mailto:}`}>Sergio Lopez</NavLink> y <NavLink to={`mailto:}`}>Juan Valdivia</NavLink> </strong>
+           
           </footer>
         </article>
       </section >

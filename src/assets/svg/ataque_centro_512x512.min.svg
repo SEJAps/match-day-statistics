@@ -1,0 +1,105 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="prefix__a" gradientUnits="userSpaceOnUse" x1="131.228" y1="45.386"
+            x2="364.733" y2="263.132">
+            <stop offset="0" stop-color="#19212c" />
+            <stop offset=".034" stop-color="#222a35" />
+            <stop offset=".09" stop-color="#3a424d" />
+            <stop offset=".16" stop-color="#606a73" />
+            <stop offset=".2" stop-color="#79838c" />
+            <stop offset=".242" stop-color="#828b94" />
+            <stop offset=".309" stop-color="#9aa2a9" />
+            <stop offset=".395" stop-color="#c2c8cb" />
+            <stop offset=".494" stop-color="#f8fbfa" />
+            <stop offset=".5" stop-color="#fcfefd" />
+            <stop offset=".524" stop-color="#ced2d3" />
+            <stop offset=".551" stop-color="#a3a7ab" />
+            <stop offset=".579" stop-color="#7d8289" />
+            <stop offset=".608" stop-color="#5e646c" />
+            <stop offset=".639" stop-color="#464d57" />
+            <stop offset=".671" stop-color="#353d47" />
+            <stop offset=".706" stop-color="#2b333e" />
+            <stop offset=".75" stop-color="#28303b" />
+            <stop offset=".813" stop-color="#2b333e" />
+            <stop offset=".858" stop-color="#343c47" />
+            <stop offset=".897" stop-color="#434c56" />
+            <stop offset=".933" stop-color="#59626c" />
+            <stop offset=".967" stop-color="#747f87" />
+            <stop offset=".999" stop-color="#96a1a9" />
+            <stop offset="1" stop-color="#97a2aa" />
+        </linearGradient>
+        <linearGradient id="prefix__b" gradientUnits="userSpaceOnUse" x1="248.099" y1="65.252"
+            x2="248.099" y2="242.611">
+            <stop offset="0" stop-color="#19212c" />
+            <stop offset=".14" stop-color="#222a35" />
+            <stop offset=".369" stop-color="#3a424d" />
+            <stop offset=".657" stop-color="#606a73" />
+            <stop offset=".991" stop-color="#96a0a9" />
+            <stop offset="1" stop-color="#97a2aa" />
+        </linearGradient>
+    </defs>
+    <g transform="matrix(7.16085 0 0 7.16085 -460.518 -397.01)">
+        <rect width="36.069" height="162.858" x="261.066" y="71.131" ry="0" rx="0"
+            transform="matrix(.26458 0 0 .26458 34.457 51.164)" fill="#009a00" stroke="#fff"
+            stroke-width="1.999" stroke-linecap="square" stroke-miterlimit="0"
+            paint-order="fill markers stroke" />
+        <g transform="matrix(.26458 0 0 .26458 34.457 51.164)">
+            <path class="prefix__st14"
+                d="M380 221.2c0 35.8-29.2 65-65 65H180.9c-35.8 0-65-29.2-65-65v-134c0-35.8 29.3-65 65-65H315c35.8 0 65 29.2 65 65z"
+                fill="url(#prefix__a)" />
+            <path class="prefix__st15"
+                d="M342.2 217.6c0 13.8-11.2 25-25 25H179c-13.8 0-25-11.2-25-25V90.3c0-13.8 11.2-25 25-25h138.2c13.8 0 25 11.2 25 25z"
+                fill="url(#prefix__b)" />
+            <path class="prefix__st2"
+                d="M317.2 59.3H179c-13.8 0-25 11.2-25 25v6c0-13.8 11.2-25 25-25h138.2c13.8 0 25 11.2 25 25v-6c0-13.8-11.3-25-25-25z"
+                fill="#0d0b0b" />
+            <path class="prefix__st3"
+                d="M317.2 242.6H179c-13.8 0-25-11.2-25-25v6c0 13.8 11.2 25 25 25h138.2c13.8 0 25-11.2 25-25v-6c0 13.8-11.3 25-25 25z"
+                fill="#dbe4e7" />
+            <rect width="116.952" height="173.788" x="192.207" y="66.759" ry="10.96" fill="#009a00"
+                stroke="#2d4f09" stroke-width="2" stroke-linecap="square" stroke-miterlimit="0"
+                paint-order="fill markers stroke" />
+            <rect width="98.178" height="161.572" x="202.14" y="72.321" ry="0" rx="0" fill="#009a00"
+                stroke="#fff" stroke-width="3.286" stroke-linecap="square" stroke-miterlimit="0"
+                paint-order="fill markers stroke" />
+            <ellipse cx="252.322" cy="153.517" rx=".688" ry=".825" fill="#f9f9f9" stroke="#fcf6f6"
+                stroke-width="2.945" stroke-linecap="square" stroke-miterlimit="0"
+                paint-order="fill markers stroke" />
+            <path d="M200.95 153.107l100.83.546" fill="none" stroke="#fcf6f6" stroke-width="2.135" />
+            <circle cx="251.776" cy="153.653" r="12.57" fill="none" stroke="#fcf6f6"
+                stroke-width="2.135" stroke-linecap="square" stroke-miterlimit="0"
+                paint-order="fill markers stroke" />
+            <path fill="none" stroke="#fcf6f6" stroke-width="2.135" stroke-linecap="square"
+                stroke-miterlimit="0" paint-order="fill markers stroke"
+                d="M224.997 72.224h53.557v31.697h-53.557zM224.997 202.292h53.557v31.697h-53.557z" />
+            <path fill="none" stroke="#fcf6f6" stroke-width="2.135" stroke-linecap="square"
+                stroke-miterlimit="0" paint-order="fill markers stroke"
+                d="M235.927 72.224h33.883v19.674h-33.883zM235.927 213.769h33.883v19.674h-33.883z" />
+            <g color="#000" paint-order="fill markers stroke">
+                <path style="-inkscape-stroke:none"
+                    d="M262.706 105.561a10.11 9.017 0 01-10.11 9.017 10.11 9.017 0 01-10.111-9.017 10.11 9.017 0 0110.11-9.017 10.11 9.017 0 0110.11 9.017z"
+                    fill="none" />
+                <path style="-inkscape-stroke:none"
+                    d="M252.596 191.387c-6.099 0-11.178 4.459-11.178 10.086h22.355c0-5.627-5.079-10.086-11.177-10.086zm0 2.137c5.069 0 9.043 3.616 9.043 7.95 0 4.332-3.7-.25-8.77-.25-5.07 0-9.316 4.582-9.316.25 0-4.334 3.974-7.95 9.043-7.95z"
+                    fill="#fcf6f6" />
+            </g>
+            <g color="#000" paint-order="fill markers stroke">
+                <path style="-inkscape-stroke:none"
+                    d="M260.792 25.386a10.11 9.017 0 01-10.11 9.017 10.11 9.017 0 01-10.11-9.017 10.11 9.017 0 0110.11-9.017 10.11 9.017 0 0110.11 9.017z"
+                    fill="none" />
+                <path style="-inkscape-stroke:none"
+                    d="M252.26 114.964c6.098.063 11.223-4.342 11.282-9.969l-22.354-.234c-.059 5.627 4.973 10.139 11.072 10.203zm.022-2.137c-5.069-.053-9.005-3.71-8.96-8.043.046-4.333 3.698.287 8.767.34 5.069.053 9.364-4.484 9.318-.151-.045 4.333-4.056 7.907-9.125 7.854z"
+                    fill="#fcf6f6" />
+            </g>
+            <circle cx="251.776" cy="97.637" r=".547" fill="#f9f9f9" stroke="#fcf6f6"
+                stroke-width="2.135" stroke-linecap="square" stroke-miterlimit="0"
+                paint-order="fill markers stroke" />
+            <circle cx="252.322" cy="209.124" r=".547" fill="#f9f9f9" stroke="#fcf6f6"
+                stroke-width="2.135" stroke-linecap="square" stroke-miterlimit="0"
+                paint-order="fill markers stroke" />
+            <path fill="#faa" fill-opacity=".564" stroke="#fd0808" stroke-width="2.392"
+                stroke-linecap="square" stroke-miterlimit="0" stroke-opacity=".519"
+                paint-order="fill markers stroke" d="M233.869 69.62h38.272v167.794h-38.272z" />
+        </g>
+    </g>
+</svg>
