@@ -45,7 +45,8 @@
   display: grid;
  
   grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
-  padding: .66rem;
+  padding: .33rem;
+  gap: .33rem;
   height: 100%;
 }
 
