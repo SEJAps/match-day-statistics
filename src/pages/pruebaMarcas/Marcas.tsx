@@ -1,7 +1,7 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import MdsCanvas from "../../components/atoms/canvas/MdsCanvas";
 import campo from "../../assets/webp/zonas_campo_new.webp"
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { TeamSelect } from "../../components/select-team/SelectTeam";
 import { ModalSelectTeam } from "../../components/modal/ModalSelectTeam";
 import { IconMark } from "../../assets/webp/Webp";
@@ -10,14 +10,21 @@ import { useGlobalCtx } from "../../store/hooks/useGlobalCtx";
 const Marcas: FC = () => {
   const [marks, setMarks] = useState<{ x: number; y: number }[]>([]);
   const { stat } = useParams();
-
+  const { isOpenModal, openModal } = useGlobalCtx()
+  const goTo = useNavigate();
   const handleCanvasClick = (x: number, y: number) => {
     setMarks((prevMarks) => [...prevMarks, { x, y }]);
+    setTimeout(() => {
+      alert("Cerrar ")
+      openModal()
+      goTo("/")
+
+    }, 1000)
   };
   const handleEditStat = () => {
     alert("Editar estadistica")
   };
-  const { isOpenModal } = useGlobalCtx()
+
 
   return (
     <div style={{
