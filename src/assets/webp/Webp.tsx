@@ -77,11 +77,13 @@ const statIcons = [
 const ImageWebp: FC<TImage> = ({ src, alt, onClick, title, image_down }) => {
   return <img onClick={onClick} className={`${image_down ? webpCSS.image_down : webpCSS.image} ${webpCSS.icon}`} src={src} alt={alt} width={32} height={32} title={title} />
 }
-
-const CheckRojo: FC<{ onClick: () => void, image_down?:boolean }> = ({ onClick, image_down }) => {
+const ImageStat: FC<TImage> = ({ src, alt, onClick, title, image_down }) => {
+  return <img onClick={onClick} className={`${image_down ? webpCSS.image_down : webpCSS.imageStat} ${webpCSS.icon}`} src={src} alt={alt} width={32} height={32} title={title} />
+}
+const CheckRojo: FC<{ onClick: () => void, image_down?: boolean }> = ({ onClick, image_down }) => {
   return (<ImageWebp image_down={image_down} onClick={onClick} src={check_rojo} alt="Check Rojo" />)
 }
-const CheckVerde: FC<{ onClick: () => void , image_down?:boolean}> = ({ onClick,image_down }) => {
+const CheckVerde: FC<{ onClick: () => void, image_down?: boolean }> = ({ onClick, image_down }) => {
   return (<ImageWebp image_down={image_down} onClick={onClick} src={check_verde} alt="Check Rojo" />)
 }
 
@@ -92,8 +94,16 @@ const IconStat: FC<{ onClick: () => void, title?: string, stat: string }> = ({ o
     {/* <small>{t(stat)}</small> */}
   </button>)
 }
+const IconMark: FC<{ onClick: () => void, title?: string, stat: string }> = ({ onClick, title, stat }) => {
+  // const { t } = useTranslation();
+  return (<button className={webpCSS.btn}>
+    <ImageStat onClick={onClick} src={(statIcons.find(record => record.stat === stat.toLowerCase()))?.src as string} alt={stat} title={title} />
+    {/* <small>{t(stat)}</small> */}
+  </button>)
+}
 export {
   CheckRojo,
   CheckVerde,
-  IconStat
+  IconStat,
+  IconMark
 }

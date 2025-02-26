@@ -13,11 +13,11 @@ export const Modal: FC<Props> = ({ children, nameModal }) => {
 
   return createPortal(
     <section className={modalCSS.modal}>
+      <header className={modalCSS.header}>
+        {nameModal === "team" && <button className={modalCSS.closeModal} type="button" onClick={toggleModal}>X</button>}
+        {nameModal === "view" && <button className={modalCSS.closeModal} type="button" onClick={toggleAddMarkModal}>X</button>}
+      </header>
       <article className={modalCSS.insideModal}>
-        <header className={modalCSS.header}>
-          {nameModal === "team" && <button className={modalCSS.closeModal} type="button" onClick={toggleModal}>X</button>}
-          {nameModal === "view" && <button className={modalCSS.closeModal} type="button" onClick={toggleAddMarkModal}>X</button>}
-        </header>
         <section className={modalCSS.contentModal}>
           {children}
         </section>

@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 export const useModal = () => {
-  const [isOpenModal, setisOpenModal] = useState<boolean>(false)
+  const [isOpenModal, setisOpenModal] = useState<boolean>(true)
   const [isOpenAddMarkModal, setIsOpenAddMarkModal] = useState<boolean>(false)
 
   const toggleModal = (): void => {

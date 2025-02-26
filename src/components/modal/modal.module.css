@@ -1,26 +1,24 @@
 .modal {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   display: grid;
   flex-direction: column;
-  z-index: 100;
+  z-index: 50;
   margin: 0;
 }
 
 .insideModal {
-  background: white;
-  display: grid;
-  grid-template-rows: auto 1fr;
-
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 button.closeModal {
-  position: fixed;
-  top: 20px;
-  right: 20px;
   border: 1px solid black;
   background-color: rgb(253, 105, 105);
   color: snow;
@@ -35,6 +33,9 @@ button.closeModal {
 }
 
 .header {
+  position: fixed;
+  top: 20px;
+  right: 20px;
   display: flex;
   grid-column: span 2;
   align-items: center;

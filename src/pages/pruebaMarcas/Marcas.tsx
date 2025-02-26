@@ -3,15 +3,20 @@ import MdsCanvas from "../../components/atoms/canvas/MdsCanvas";
 import campo from "../../assets/webp/zonas_campo_new.webp"
 import Icono_falta from "../../assets/svg/falta_512x512.svg"
 import { useParams } from "react-router";
+import { TeamSelect } from "../../components/select-team/SelectTeam";
+import { ModalSelectTeam } from "../../components/modal/ModalSelectTeam";
+import { IconMark, IconStat } from "../../assets/webp/Webp";
 
 const Marcas: FC = () => {
   const [marks, setMarks] = useState<{ x: number; y: number }[]>([]);
-  const { team } = useParams();
+  const { stat } = useParams();
+
   const handleCanvasClick = (x: number, y: number) => {
     setMarks((prevMarks) => [...prevMarks, { x, y }]);
-
   };
-
+  const handleEditStat = () => {
+    alert("Editar estadistica")
+  };
   return (
     <div style={{
       position: 'relative',
@@ -21,27 +26,17 @@ const Marcas: FC = () => {
       backgroundImage: `url(${campo})`,
       backgroundSize: '100% 100%',
     }}>
-      <h1 style={{
-        position: 'fixed',
-        top: '0',
-        margin: '0',
-        color: 'white',
-        textTransform: 'capitalize',
-        padding: '1rem'
-      }}>{team}</h1>
       <MdsCanvas onCanvasClick={handleCanvasClick} />
+      <ModalSelectTeam nameModal="view">
+        <TeamSelect />
+      </ModalSelectTeam>
       {marks.map((mark, index) => (
         <div
           key={index}
           style={{
             left: `${mark.x}px`, top: `${mark.y}px`, transform: "translate(-50%, -50%)", position: 'absolute',
-            width: '64px',
-            height: '64px',
-            backgroundImage: `url(${Icono_falta})`,
-            backgroundSize: 'cover',
-            borderRadius: '50%'
           }}
-        ></div>
+        > <IconMark onClick={handleEditStat} key={stat} stat={stat as string} /></div>
       ))}
     </div>);
 };

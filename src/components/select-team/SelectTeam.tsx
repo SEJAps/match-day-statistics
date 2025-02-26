@@ -1,60 +1,35 @@
 import { FC } from "react";
 import { RootState, useAppSelector } from "../../store/store";
-// import { useGlobalCtx } from "../../store/hooks/useGlobalCtx";
-import { ModalAddMark } from "../modal/ModalAddMark";
-import { MarkStat } from "../mark-stat/Mark";
-import { NavLink } from "react-router";
+import teamSelectCSS from './team-select.module.css'
+import { useGlobalCtx } from "../../store/hooks/useGlobalCtx";
 
-
-export const SelectTeam: FC = () => {
+export const TeamSelect: FC = () => {
   const { localName, guestName } = useAppSelector((state: RootState) => state.stats)
-  // const { toggleAddMarkModal } = useGlobalCtx()
+  const { toggleModal } = useGlobalCtx()
   // const handlerViewAddMArk = () => {
   //   toggleAddMarkModal()
   // }
+  const handlerTeamSelected = (name: string) => {
+    setTimeout(() => {
+      alert(`Seguro que quieres selecionar este equipo ${name}?`)
+      toggleModal()
+    }, 300)
+
+  }
   return (
     <>
-      <ModalAddMark nameModal="view">
-        <MarkStat />
-      </ModalAddMark>
-      <NavLink style={{
-        display: 'inline-flex',
-        padding: '1rem',
-        fontSize: '4rem',
-        fontWeight: '900',
-        alignItems: 'center',
-        justifyContent: 'center',
-        border: '1px solid silver',
-        backgroundColor: 'transparent',
-        color: 'silver',
-        textShadow: '2px 2px 1px black'
-      }} to={`/marcas/${localName.toLowerCase()}`}>
+      <button className={teamSelectCSS.navLink} onClick={() => handlerTeamSelected(localName)}>
         {localName}
-      </NavLink>
-      <div style={{
-        textAlign: 'center'
-      }}>
-        <strong style={{
-          fontSize: '8rem',
-          fontWeight: '900',
-        }}>
+      </button>
+      <div className={teamSelectCSS.textCenter}>
+        <strong className={teamSelectCSS.strong}>
           VS
         </strong>
       </div>
-      <NavLink style={{
-        display: 'inline-flex',
-        padding: '1rem',
-        fontSize: '4rem',
-        fontWeight: '900',
-        alignItems: 'center',
-        justifyContent: 'center',
-        border: '1px solid silver',
-        backgroundColor: 'transparent',
-        color: 'silver',
-        textShadow: '2px 2px 1px black'
-      }} to={`/marcas/${guestName.toLowerCase()}`}>
+      <button className={teamSelectCSS.navLink} onClick={() => handlerTeamSelected(guestName)}>
         {guestName}
-      </NavLink>
+      </button>
+
     </>
   )
 }

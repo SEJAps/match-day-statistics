@@ -1,6 +1,5 @@
 import { FC } from "react";
 import userPanelCss from './css/user-panel.module.css'
-import { useGlobalCtx } from "../store/hooks/useGlobalCtx";
 import { statNames } from "../config";
 import { useAppSelector } from "../store/store";
 import MatchTimer from "../components/matchtimer/MatchTimer";
@@ -9,12 +8,18 @@ import { Container } from "../components/container/Container";
 import { useTranslation } from "react-i18next";
 import { SelectLanguage } from "../components/select-language/SelectLanguage";
 import { IconStat } from "../assets/webp/Webp";
+import { useNavigate } from "react-router";
 // import NewMatchTimer from "../components/matchtimer/NewMatchTimer";
 // import Icono_gol from "../svg/gol_512x512.svg"
 const UserPanelLayout: FC = () => {
   const { t } = useTranslation();
+  const goTo = useNavigate()
   const { guestName, localName, local, guest } = useAppSelector(state => state.stats)
-  const { toggleModal } = useGlobalCtx()
+
+  const handlerGoto = (stat: string) => {
+
+    goTo(`/marcas/${stat}`)
+  }
   const stats = Object.keys(statNames)
 
   return (
@@ -38,7 +43,7 @@ const UserPanelLayout: FC = () => {
         </section>
         <section className={userPanelCss.gridStatsButtons}>
           {stats.map(stat => (
-            <IconStat key={stat} onClick={toggleModal} title={t(stat)} stat={stat} />
+            <IconStat key={stat} onClick={() => handlerGoto(stat)} title={t(stat)} stat={stat} />
           ))}
         </section>
       </section>

@@ -1,0 +1,50 @@
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: silver;
+  text-shadow: 2px 2px 1px black;
+  padding: 1rem;
+  font-size: 4rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.navLink:hover,
+.navLink:active {
+  transform: scale(.7);
+  color: rgb(156, 255, 126);
+  animation: teams 300ms infinite alternate;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.strong {
+  font-size: 8rem;
+  font-weight: 900;
+}
+
+/* .absolute {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+} */
+
+
+
+@keyframes teams {
+  to {
+    transform: scale(.9);
+  }
+}
