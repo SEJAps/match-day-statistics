@@ -1,11 +1,10 @@
 import { FC, useState } from "react";
 import MdsCanvas from "../../components/atoms/canvas/MdsCanvas";
 import campo from "../../assets/webp/zonas_campo_new.webp"
-import Icono_falta from "../../assets/svg/falta_512x512.svg"
 import { useParams } from "react-router";
 import { TeamSelect } from "../../components/select-team/SelectTeam";
 import { ModalSelectTeam } from "../../components/modal/ModalSelectTeam";
-import { IconMark, IconStat } from "../../assets/webp/Webp";
+import { IconMark } from "../../assets/webp/Webp";
 
 const Marcas: FC = () => {
   const [marks, setMarks] = useState<{ x: number; y: number }[]>([]);
