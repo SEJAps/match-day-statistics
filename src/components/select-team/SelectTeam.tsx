@@ -5,14 +5,14 @@ import { useGlobalCtx } from "../../store/hooks/useGlobalCtx";
 
 export const TeamSelect: FC = () => {
   const { localName, guestName } = useAppSelector((state: RootState) => state.stats)
-  const { toggleModal } = useGlobalCtx()
+  const { closeModal } = useGlobalCtx()
   // const handlerViewAddMArk = () => {
   //   toggleAddMarkModal()
   // }
   const handlerTeamSelected = (name: string) => {
     setTimeout(() => {
-      alert(`Seguro que quieres selecionar este equipo ${name}?`)
-      toggleModal()
+      alert(`Seguro que quieres seleccionar este equipo? "${name}"`)
+      closeModal()
     }, 300)
 
   }

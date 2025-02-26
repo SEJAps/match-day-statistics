@@ -9,12 +9,12 @@ type Props = {
 }
 
 export const Modal: FC<Props> = ({ children, nameModal }) => {
-  const { toggleModal, toggleAddMarkModal } = useGlobalCtx()
+  const { closeModal, toggleAddMarkModal } = useGlobalCtx()
 
   return createPortal(
     <section className={modalCSS.modal}>
       <header className={modalCSS.header}>
-        {nameModal === "team" && <button className={modalCSS.closeModal} type="button" onClick={toggleModal}>X</button>}
+        {nameModal === "team" && <button className={modalCSS.closeModal} type="button" onClick={closeModal}>X</button>}
         {nameModal === "view" && <button className={modalCSS.closeModal} type="button" onClick={toggleAddMarkModal}>X</button>}
       </header>
       <article className={modalCSS.insideModal}>

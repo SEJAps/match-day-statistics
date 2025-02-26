@@ -1,10 +1,11 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import MdsCanvas from "../../components/atoms/canvas/MdsCanvas";
 import campo from "../../assets/webp/zonas_campo_new.webp"
 import { useParams } from "react-router";
 import { TeamSelect } from "../../components/select-team/SelectTeam";
 import { ModalSelectTeam } from "../../components/modal/ModalSelectTeam";
 import { IconMark } from "../../assets/webp/Webp";
+import { useGlobalCtx } from "../../store/hooks/useGlobalCtx";
 
 const Marcas: FC = () => {
   const [marks, setMarks] = useState<{ x: number; y: number }[]>([]);
@@ -16,6 +17,8 @@ const Marcas: FC = () => {
   const handleEditStat = () => {
     alert("Editar estadistica")
   };
+  const { isOpenModal } = useGlobalCtx()
+
   return (
     <div style={{
       position: 'relative',
@@ -26,9 +29,9 @@ const Marcas: FC = () => {
       backgroundSize: '100% 100%',
     }}>
       <MdsCanvas onCanvasClick={handleCanvasClick} />
-      <ModalSelectTeam nameModal="view">
+      {isOpenModal && <ModalSelectTeam nameModal="team">
         <TeamSelect />
-      </ModalSelectTeam>
+      </ModalSelectTeam>}
       {marks.map((mark, index) => (
         <div
           key={index}

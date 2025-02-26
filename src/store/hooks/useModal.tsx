@@ -1,14 +1,20 @@
 import { useState } from "react"
 
 export const useModal = () => {
-  const [isOpenModal, setisOpenModal] = useState<boolean>(true)
+  const [isOpenModal, setIsOpenModal] = useState<boolean>(true)
   const [isOpenAddMarkModal, setIsOpenAddMarkModal] = useState<boolean>(false)
 
   const toggleModal = (): void => {
-    setisOpenModal(state => !state)
+    setIsOpenModal(state => !state)
   }
   const toggleAddMarkModal = (): void => {
     setIsOpenAddMarkModal(state => !state)
   }
-  return { isOpenModal, isOpenAddMarkModal, toggleModal, toggleAddMarkModal }
+  const openModal = () => {
+    setIsOpenModal(() => true)
+  }
+  const closeModal = () => {
+    setIsOpenModal(() => false)
+  }
+  return { isOpenModal, isOpenAddMarkModal, openModal, closeModal, toggleModal, toggleAddMarkModal }
 }
