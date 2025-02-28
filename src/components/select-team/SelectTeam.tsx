@@ -9,8 +9,8 @@ export const TeamSelect: FC = () => {
   // const handlerViewAddMArk = () => {
   //   toggleAddMarkModal()
   // }
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const handlerTeamSelected = (name: string) => {
+
+  const handlerTeamSelected = () => {
     setTimeout(() => {
       // alert(`Seguro que quieres seleccionar este equipo? "${name}"`)
       closeModal()
@@ -19,7 +19,7 @@ export const TeamSelect: FC = () => {
   }
   return (
     <>
-      <button className={teamSelectCSS.navLink} onClick={() => handlerTeamSelected(localName)}>
+      <button className={teamSelectCSS.navLink} onClick={() => handlerTeamSelected()}>
         {localName}
       </button>
       <div className={teamSelectCSS.textCenter}>
@@ -27,7 +27,7 @@ export const TeamSelect: FC = () => {
           VS
         </strong>
       </div>
-      <button className={teamSelectCSS.navLink} onClick={() => handlerTeamSelected(guestName)}>
+      <button className={teamSelectCSS.navLink} onClick={() => handlerTeamSelected()}>
         {guestName}
       </button>
 
