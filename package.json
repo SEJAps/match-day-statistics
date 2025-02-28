@@ -12,6 +12,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.1",
     "@types/jspdf": "^2.0.0",
+    "heatmapjs": "^2.0.2",
     "i18next": "^24.2.2",
     "i18next-browser-languagedetector": "^8.0.2",
     "i18next-chained-backend": "^4.6.2",
