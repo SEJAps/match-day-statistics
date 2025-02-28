@@ -9,9 +9,10 @@ export const TeamSelect: FC = () => {
   // const handlerViewAddMArk = () => {
   //   toggleAddMarkModal()
   // }
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handlerTeamSelected = (name: string) => {
     setTimeout(() => {
-      alert(`Seguro que quieres seleccionar este equipo? "${name}"`)
+      // alert(`Seguro que quieres seleccionar este equipo? "${name}"`)
       closeModal()
     }, 300)
 

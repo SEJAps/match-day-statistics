@@ -1,25 +1,33 @@
 import { FC, useState } from "react";
 import MdsCanvas from "../../components/atoms/canvas/MdsCanvas";
 import campo from "../../assets/webp/zonas_campo_new.webp"
-import { useNavigate, useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import { TeamSelect } from "../../components/select-team/SelectTeam";
 import { ModalSelectTeam } from "../../components/modal/ModalSelectTeam";
 import { IconMark } from "../../assets/webp/Webp";
 import { useGlobalCtx } from "../../store/hooks/useGlobalCtx";
+import { useAppDispatch } from "../../store/store";
+import { createHeatMark } from "../../store/slices/heatMapSlice";
 
 const Marcas: FC = () => {
+  // const { team } = useAppSelector(state => state.heatMap)
   const [marks, setMarks] = useState<{ x: number; y: number }[]>([]);
   const { stat } = useParams();
-  const { isOpenModal, openModal } = useGlobalCtx()
-  const goTo = useNavigate();
+  const { isOpenModal } = useGlobalCtx()
+  const dispacth = useAppDispatch()
+  const [viewHeatMap, setViewHeatMap] = useState<boolean>()
+  // const goTo = useNavigate();
   const handleCanvasClick = (x: number, y: number) => {
     setMarks((prevMarks) => [...prevMarks, { x, y }]);
-    setTimeout(() => {
-      alert("Cerrar ")
-      openModal()
-      goTo("/")
+    setViewHeatMap(true)
 
-    }, 1000)
+    dispacth(createHeatMark({ team: 'asdasd', data: { x, y, value: 1 } }))
+    // setTimeout(() => {
+    //   alert("Cerrar ")
+    //   openModal()
+    //   goTo("/")
+
+    // }, 1000)
   };
   const handleEditStat = () => {
     alert("Editar estadistica")
@@ -43,10 +51,14 @@ const Marcas: FC = () => {
         <div
           key={index}
           style={{
-            left: `${mark.x}px`, top: `${mark.y}px`, transform: "translate(-50%, -50%)", position: 'absolute',
+            left: `${mark.x}px`, top: `${mark.y}px`, transform: "translate(-50%, -50%)", position: 'absolute', display: 'flex', flexDirection: 'column', alignItems: 'center'
           }}
-        > <IconMark onClick={handleEditStat} key={stat} stat={stat as string} /></div>
+        >
+          <IconMark onClick={handleEditStat} key={stat} stat={stat as string} />
+          {viewHeatMap && <Link style={{ color: 'white' }} to={`/heatmap`}>Click para proba el mapa de calor</Link>}
+        </div>
       ))}
+
     </div>);
 };
 

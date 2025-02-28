@@ -1,5 +1,7 @@
 import { FC, MouseEvent, useState } from "react";
 import viewMarks from '../../assets/webp/zonas_campo.webp'
+import { useAppDispatch } from "../../store/store";
+import { createHeatMark } from "../../store/slices/heatMapSlice";
 interface Mark {
   x: number,
   y: number
@@ -7,9 +9,11 @@ interface Mark {
 
 export const MarkStat: FC = () => {
   const [marks, setMarks] = useState<Mark[]>([])
+  const dispacth = useAppDispatch()
   const handlerClick = (eve: MouseEvent) => {
-    console.log()
     setMarks((state) => [...state, { x: eve.clientX, y: eve.clientY }])
+    console.log("HOla marka")
+    dispacth(createHeatMark({ team: 'asdasd', data: { x: Number(eve.clientX), y: Number(eve.clientY), value: 10 } }))
   }
 
   return (
