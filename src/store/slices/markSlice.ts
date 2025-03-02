@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { TTeam } from "../../types";
-import { reset } from "./timerSlice";
 
 export interface MarkData {
     team: TTeam | undefined,
