@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-
+import canvasCSS from './canvas.module.css'
 
 interface CanvasProps {
   onCanvasClick: (x: number, y: number) => void;
@@ -35,13 +35,7 @@ const MdsCanvas = ({ onCanvasClick }: CanvasProps) => {
   return (
     <canvas
       ref={canvasRef}
-      width={'100px'}
-      height={'100px'}
-      style={{
-        width: '100%',
-        height: '100%',
-        overflow: 'hidden',
-      }}
+      className={canvasCSS.default_canvas}
       onClick={(event) => {
         const canvas = canvasRef.current;
         if (!canvas) return;

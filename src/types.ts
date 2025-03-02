@@ -11,7 +11,6 @@ export type InitialStats = {
   fouls: number | string,
   dangerous_fouls: number | string,
   offsides: number | string,
-
   goal_cahances_in: number | string,
   merit_stop: number | string,
   shoot_out: number | string,
@@ -31,7 +30,7 @@ export interface TeamStats {
   merit_stop: number,
   shoot_out: number,
 }
-export type TTeam = "local" | "guest"
+export type TTeam = "all" | "local" | "guest"
 export type Props = {
   children: ReactNode
 }

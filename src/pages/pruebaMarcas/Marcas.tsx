@@ -1,64 +1,83 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import MdsCanvas from "../../components/atoms/canvas/MdsCanvas";
 import campo from "../../assets/webp/zonas_campo_new.webp"
+import marcasCSS from "./marcas.module.css";
 import { Link, useParams } from "react-router";
 import { TeamSelect } from "../../components/select-team/SelectTeam";
-import { ModalSelectTeam } from "../../components/modal/ModalSelectTeam";
-import { IconMark } from "../../assets/webp/Webp";
-import { useGlobalCtx } from "../../store/hooks/useGlobalCtx";
-import { useAppDispatch } from "../../store/store";
-import { createHeatMark } from "../../store/slices/heatMapSlice";
+// import { IconMark } from "../../assets/webp/Webp";
+import { useAppDispatch, useAppSelector } from "../../store/store";
+import { createMark } from "../../store/slices/markSlice";
+import { TTeam } from "../../types";
 
 const Marcas: FC = () => {
-  // const { team } = useAppSelector(state => state.heatMap)
-  const [marks, setMarks] = useState<{ x: number; y: number }[]>([]);
+  const [team, setTeam] = useState<TTeam>("all")
+  const { local, guest } = useAppSelector(state => state.marks)
   const { stat } = useParams();
-  const { isOpenModal } = useGlobalCtx()
   const dispacth = useAppDispatch()
-  const [viewHeatMap, setViewHeatMap] = useState<boolean>()
-  // const goTo = useNavigate();
+  const [viewHeatMap, setViewHeatMap] = useState<boolean>(true)
+  // const goTo = useNavigate()
+
   const handleCanvasClick = (x: number, y: number) => {
-    setMarks((prevMarks) => [...prevMarks, { x, y }]);
     setViewHeatMap(true)
-
-    dispacth(createHeatMark({ team: 'asdasd', data: { x, y, value: 1 } }))
+    const newData = { team, x, y, intensity: 1, stat: stat as string, time_stamp: new Date().getTime() }
+    dispacth(createMark({ team, data: newData }))
     // setTimeout(() => {
-    //   alert("Cerrar ")
-    //   openModal()
-    //   goTo("/")
-
-    // }, 1000)
-  };
-  const handleEditStat = () => {
-    alert("Editar estadistica")
+    //   goTo(`/`)
+    // }, 3000)
   };
 
+  const handlerTeamSelected = (team: TTeam) => {
+    setTeam(() => team)
+    console.log(team)
+  }
+  // const handleEditStat = () => {
+  //   alert("Editar estadistica")
+  // };
+
+  useEffect(() => { }, [local, guest, handlerTeamSelected])
 
   return (
-    <div style={{
-      position: 'relative',
-      width: '100%',
-      height: '100svh',
-      overflow: 'clip',
-      backgroundImage: `url(${campo})`,
-      backgroundSize: '100% 100%',
-    }}>
+    <div className={marcasCSS.container} style={{ backgroundImage: `url(${campo})` }}>
       <MdsCanvas onCanvasClick={handleCanvasClick} />
-      {isOpenModal && <ModalSelectTeam nameModal="team">
-        <TeamSelect />
-      </ModalSelectTeam>}
-      {marks.map((mark, index) => (
+      {viewHeatMap && team === "all" ?
+        <Link style={{ color: 'white', position: 'fixed', zIndex: 100, background: 'black' }} to={`/heatmap/all`}>
+          Click para proba el mapa de calor
+        </Link>
+        : team === "local" ?
+          <Link style={{ color: 'white', position: 'fixed', zIndex: 100, background: 'black' }} to={`/heatmap/local`}>
+            Click para proba el mapa de calor
+          </Link>
+          :
+          <Link style={{ color: 'white', position: 'fixed', zIndex: 100, background: 'black' }} to={`/heatmap/guest`}>
+            Click para proba el mapa de calor
+          </Link>
+      }
+      {team === "all" && <TeamSelect teamSelected={handlerTeamSelected} />}
+      {team === "local" ? local.map((mark, index) => {
+        return (
+          <div
+            key={index}
+            style={{
+              left: `${mark.x}px`, top: `${mark.y}px`, transform: "translate(-50%, -50%)", position: 'absolute', display: 'flex', flexDirection: 'column', alignItems: 'center'
+            }}
+          >
+            {/* <IconMark onClick={handleEditStat} key={stat} stat={stat as string} /> */}
+            {team}
+            {stat}
+          </div>
+        )
+      }) : guest.map((mark, index) => (
         <div
           key={index}
           style={{
             left: `${mark.x}px`, top: `${mark.y}px`, transform: "translate(-50%, -50%)", position: 'absolute', display: 'flex', flexDirection: 'column', alignItems: 'center'
           }}
         >
-          <IconMark onClick={handleEditStat} key={stat} stat={stat as string} />
-          {viewHeatMap && <Link style={{ color: 'white' }} to={`/heatmap`}>Click para proba el mapa de calor</Link>}
+          {/* <IconMark onClick={handleEditStat} key={stat} stat={stat as string} /> */}
+          {team}
+          {stat}
         </div>
       ))}
-
     </div>);
 };
 

@@ -4,14 +4,14 @@ import statsReducer from './slices/statsSlice'
 import userReducer from './slices/userSlice'
 import timerReducer from './slices/timerSlice'
 import newTimerReducer from './slices/newTimerSlice'
-import heatMapReducer from './slices/heatMapSlice'
+import markReducer from './slices/markSlice'
 const store = configureStore({
   reducer: {
     stats: statsReducer,
     user: userReducer,
     timer: timerReducer,
     newTimer: newTimerReducer,
-    heatMap: heatMapReducer
+    marks: markReducer
   },
 })
 // Infer the `RootState` and `AppDispatch` types from the store itself

@@ -1,15 +1,9 @@
+import { useParams } from "react-router";
+import { useAppSelector } from "../../store/store";
 import campo from "./campo_futbol_mapa_de_calor_plano.svg"
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, FC } from "react";
 
-interface HeatPoint {
-  x: number;
-  y: number;
-  normalizedX: number;
-  normalizedY: number;
-  intensity: number;
-  action: string;
-  timestamp: string;
-}
+
 
 const actionColors: Record<string, string> = {
   goals: "rgba(255, 0, 0, 1)",
@@ -26,9 +20,10 @@ const actionColors: Record<string, string> = {
   shoot_out: "rgba(173, 216, 230, 1)"
 };
 
-const HeatmapCanvas = () => {
+const Heatmap: FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [heatPoints, setHeatPoints] = useState<HeatPoint[]>([]);
+  const { team } = useParams()
+  const { local, guest } = useAppSelector((state) => state.marks);
   const [selectedAction, setSelectedAction] = useState<string>("goals");
   const [intensity, setIntensity] = useState<number>(1);
   const [isSettingsOpen, setIsSettingsOpen] = useState<boolean>(false);
@@ -60,20 +55,7 @@ const HeatmapCanvas = () => {
     } else {
       drawCanvas();
     }
-  }, [heatPoints, canvasSize]);
-
-  const handleCanvasClick = (event: React.MouseEvent<HTMLCanvasElement>) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const rect = canvas.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-    const normalizedX = x / canvas.width;
-    const normalizedY = y / canvas.height;
-    const timestamp = new Date().toLocaleTimeString();
-
-    setHeatPoints((prevPoints) => [...prevPoints, { x, y, normalizedX, normalizedY, intensity, action: selectedAction, timestamp }]);
-  };
+  }, [local, guest, team, canvasSize]);
 
   const drawCanvas = () => {
     const canvas = canvasRef.current;
@@ -86,16 +68,39 @@ const HeatmapCanvas = () => {
     if (backgroundImageRef.current) {
       ctx.drawImage(backgroundImageRef.current, 0, 0, canvas.width, canvas.height);
     }
-
-    heatPoints.forEach(({ x, y, intensity, action }) => {
-      drawHeatPoint(ctx, x, y, intensity, action);
-    });
+    if (team === "all") {
+      local.forEach(({ x, y, intensity, stat }) => {
+        drawHeatPoint(ctx, x, y, intensity, stat);
+      });
+      guest.forEach(({ x, y, intensity, stat }) => {
+        drawHeatPoint(ctx, x, y, intensity, stat);
+      });
+    }
+    if (team === "local") {
+      local.forEach(({ x, y, intensity, stat }) => {
+        drawHeatPoint(ctx, x, y, intensity, stat);
+      });
+      
+    }
+    if (team === "guest") {
+      guest.forEach(({ x, y, intensity, stat }) => {
+        drawHeatPoint(ctx, x, y, intensity, stat);
+      });
+      
+    }
   };
 
   const drawHeatPoint = (ctx: CanvasRenderingContext2D, x: number, y: number, intensity: number, action: string) => {
     const radius = 20 + intensity * 10;
     const color = actionColors[action] || "rgba(255, 255, 255, 1)";
     const gradient = ctx.createRadialGradient(x, y, 5, x, y, radius);
+
+    // Añade el nombre de la stadistica en el canvas
+    ctx.fillStyle = "black";
+    ctx.font = "12px Arial";
+    ctx.textAlign = "center";
+    ctx.fillText(action.replace("_", " "), x, y - radius - 5);
+
     gradient.addColorStop(0, color.replace("1)", "0.8)"));
     gradient.addColorStop(0.5, color.replace("1)", "0.4)"));
     gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
@@ -132,18 +137,21 @@ const HeatmapCanvas = () => {
             gap: '0.5rem',
             color: 'black',
           }}>
-            {heatPoints.map((point, index) => (
-              <li key={index}>{point.timestamp} - {point.action.replace("_", " ")}</li>
+            {local.map((point, index) => (
+              <li key={index}>{point.time_stamp} - {point.stat.replace("_", " ")}{point.stat}s</li>
+            ))}
+            {guest.map((point, index) => (
+              <li key={index}>{point.time_stamp} - {point.stat.replace("_", " ")}{point.stat}</li>
             ))}
           </ol>
         </div>
       )}
-      <canvas ref={canvasRef} onClick={handleCanvasClick}
+      <canvas ref={canvasRef}
         style={{ position: "fixed", top: 0, left: 0 }} />
     </>
   );
 };
 
-export default HeatmapCanvas;
+export default Heatmap;
 
 
