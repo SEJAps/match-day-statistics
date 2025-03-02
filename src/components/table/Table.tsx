@@ -1,10 +1,10 @@
 // import { FC, Fragment, useState } from "react";
 import { FC, Fragment } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/store";
-import { increment, decrement } from "../../store/slices/statsSlice";
+import { decrement } from "../../store/slices/statsSlice";
 import tableCSS from './table.module.css'
 import { Container } from "../container/Container";
-import { ILocation, TTeam } from "../../types";
+import {  TTeam } from "../../types";
 // import { StatAction } from "../stat-action/StatAction";
 import { useTranslation } from "react-i18next";
 import { Title } from "../title/Title";
@@ -24,6 +24,7 @@ export const Table: FC = () => {
     dispatch(removeLastMark({ team }))
   }
   const updateIncrementStat = (team: TTeam, stat?: string) => {
+    console.log(team)
     // setCurrentStatAction({ team, stat })
     goTo(`/marcas/${stat}`)
   }
