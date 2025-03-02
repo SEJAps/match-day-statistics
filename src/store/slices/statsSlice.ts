@@ -28,15 +28,17 @@ const statsSlice = createSlice({
   initialState,
   reducers: {
     increment: (state,
-      action: PayloadAction<{ team: "local" | "guest"; stat: keyof TeamStats; value: number }>) => {
-      state[action.payload.team][action.payload.stat] += 1
+      action: PayloadAction<{ team: TTeam; stat: keyof TeamStats; value: number }>) => {
+      const team = action.payload.team === "local" ? state.local : state.guest;
+      team[action.payload.stat] += 1;
     },
     decrement: (state,
-      action: PayloadAction<{ team: "local" | "guest"; stat: keyof TeamStats; value: number }>) => {
-      if (state[action.payload.team][action.payload.stat] <= 0) {
-        state[action.payload.team][action.payload.stat] = 0
+      action: PayloadAction<{ team: TTeam; stat: keyof TeamStats; value: number }>) => {
+      const team = action.payload.team === "local" ? state.local : state.guest;
+      if (team[action.payload.stat] <= 0) {
+        team[action.payload.stat] = 0;
       } else {
-        state[action.payload.team][action.payload.stat] -= 1
+        team[action.payload.stat] -= 1;
       }
     },
     resetStats: (state) => {
