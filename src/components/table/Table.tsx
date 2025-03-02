@@ -16,6 +16,7 @@ export const Table: FC = () => {
   const dispatch = useAppDispatch();
   const updateDecrementStat = ({ team, stat }: ILocation) => {
     // setCurrentStatAction({ team, stat })
+    if(team !== "all")
     dispatch(decrement({ team, stat: stat as keyof typeof local, value: -1 }))
   }
   return (
