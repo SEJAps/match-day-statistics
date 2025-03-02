@@ -2,12 +2,13 @@ import { FC, useEffect, useState } from "react";
 import MdsCanvas from "../../components/atoms/canvas/MdsCanvas";
 import campo from "../../assets/webp/zonas_campo_new.webp"
 import marcasCSS from "./marcas.module.css";
-import { Link, useParams } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
 import { TeamSelect } from "../../components/select-team/SelectTeam";
 // import { IconMark } from "../../assets/webp/Webp";
 import { useAppDispatch, useAppSelector } from "../../store/store";
 import { createMark } from "../../store/slices/markSlice";
-import { TTeam } from "../../types";
+import { TeamStats, TTeam } from "../../types";
+import { increment } from "../../store/slices/statsSlice";
 
 const Marcas: FC = () => {
   const [team, setTeam] = useState<TTeam>("all")
@@ -15,15 +16,14 @@ const Marcas: FC = () => {
   const { stat } = useParams();
   const dispacth = useAppDispatch()
   const [viewHeatMap, setViewHeatMap] = useState<boolean>(true)
-  // const goTo = useNavigate()
+  const goTo = useNavigate()
 
   const handleCanvasClick = (x: number, y: number) => {
     setViewHeatMap(true)
-    const newData = { team, x, y, intensity: 1, stat: stat as string, time_stamp: new Date().getTime() }
+    const newData = { team, x, y, intensity: 1, stat: stat as keyof TeamStats, time_stamp: new Date().getTime() }
     dispacth(createMark({ team, data: newData }))
-    // setTimeout(() => {
-    //   goTo(`/`)
-    // }, 3000)
+    dispacth(increment({ team, stat: newData.stat, value: 1 }))
+    goTo(`/`)
   };
 
   const handlerTeamSelected = (team: TTeam) => {

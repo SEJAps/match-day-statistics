@@ -4,20 +4,28 @@ import { useAppDispatch, useAppSelector } from "../../store/store";
 import { increment, decrement } from "../../store/slices/statsSlice";
 import tableCSS from './table.module.css'
 import { Container } from "../container/Container";
-import { ILocation } from "../../types";
+import { ILocation, TTeam } from "../../types";
 // import { StatAction } from "../stat-action/StatAction";
 import { useTranslation } from "react-i18next";
 import { Title } from "../title/Title";
 import { CheckRojo, CheckVerde } from "../../assets/webp/Webp";
+import { removeLastMark } from "../../store/slices/markSlice";
+import { useNavigate } from "react-router";
 export const Table: FC = () => {
   const { local, guest } = useAppSelector(state => state.stats)
+  const goTo = useNavigate()
   const { t } = useTranslation()
   // const [currentStatAction, setCurrentStatAction] = useState<ILocation>()
   const dispatch = useAppDispatch();
-  const updateDecrementStat = ({ team, stat }: ILocation) => {
+
+  const updateDecrementStat = (team: TTeam, stat?: string) => {
     // setCurrentStatAction({ team, stat })
-    if(team !== "all")
-    dispatch(decrement({ team, stat: stat as keyof typeof local, value: -1 }))
+    dispatch(decrement({ team: team, stat: stat as keyof typeof local, value: -1 }))
+    dispatch(removeLastMark({ team }))
+  }
+  const updateIncrementStat = (team: TTeam, stat?: string) => {
+    // setCurrentStatAction({ team, stat })
+    goTo(`/marcas/${stat}`)
   }
   return (
     <Container>
@@ -32,18 +40,17 @@ export const Table: FC = () => {
         {Object.keys(local).map((stat) =>
           <Fragment key={stat}>
             <div className={tableCSS.stat_control}>
-              <CheckRojo image_down onClick={() => updateDecrementStat({ team: "local", stat })} />
+              <CheckRojo image_down onClick={() => updateDecrementStat("local", stat as keyof typeof local)} />
               <span className={tableCSS.stat_value}>{local[stat as keyof typeof local]}</span>
-              <CheckVerde image_down onClick={() => dispatch(increment({ team: "local", stat: stat as keyof typeof local, value: 1 }))} />
-
+              <CheckVerde image_down onClick={() => updateIncrementStat("local", stat as keyof typeof local)} />
             </div>
             <div className={tableCSS.stat_control}>
               <strong className={tableCSS.stat}>{t(stat)}</strong>
             </div>
             <div className={tableCSS.stat_control}>
-              <CheckRojo image_down onClick={() => dispatch(decrement({ team: "guest", stat: stat as keyof typeof guest, value: -1 }))} />
+              <CheckRojo image_down onClick={() => updateDecrementStat("guest", stat as keyof typeof guest)} />
               <span className={tableCSS.stat_value}>{guest[stat as keyof typeof guest]}</span>
-              <CheckVerde image_down onClick={() => dispatch(increment({ team: "guest", stat: stat as keyof typeof guest, value: 1 }))} />
+              <CheckVerde image_down onClick={() => updateIncrementStat("guest", stat as keyof typeof local)} />
             </div>
           </Fragment>
         )}

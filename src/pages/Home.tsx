@@ -17,6 +17,7 @@ export const Home: FC = () => {
       {existStats &&
         <>
           <UserPanelLayout />
+          {/* <NewTable /> */}
           <Table />
           <Actions />
         </>
