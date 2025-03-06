@@ -21,7 +21,7 @@ form.create_stats {
 
   & input {
     width: 100%;
-    padding: 1rem .5rem;
+    padding: 1rem 0.5rem;
     text-align: center;
     font-size: 1.5rem;
     border: 4px solid rgb(236, 161, 62);
@@ -47,7 +47,7 @@ form.create_stats {
   color: rgb(255, 255, 255);
   padding: 1rem;
   font-size: 1.2rem;
-  border-radius: .33rem;
+  border-radius: 0.33rem;
   border: 1px solid gray;
   font-weight: 900;
 }
@@ -56,17 +56,15 @@ form.create_stats {
   display: flex;
   align-self: center;
   align-items: start;
-
 }
 
 @media screen and (width>1024px) {
   form.create_stats {
     & input {
       width: 100%;
-      padding: .5rem;
+      padding: 0.5rem;
       text-align: center;
       font-size: 1.5rem;
-
     }
   }
 

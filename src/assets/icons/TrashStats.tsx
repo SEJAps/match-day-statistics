@@ -1,12 +1,13 @@
 import { SVGProps } from "react";
 import { removeStatsByMatchActive } from "../../utils";
+import { useNavigate } from "react-router";
 
 export function TrashStats(props: SVGProps<SVGSVGElement>) {
-
+  const goTo = useNavigate();
   const handlerClearStats = () => {
-    removeStatsByMatchActive()
-    globalThis.location.reload()
-  }
+    removeStatsByMatchActive();
+    goTo("/inicio");
+  };
   return (
     <svg
       onClick={handlerClearStats}
@@ -39,5 +40,5 @@ export function TrashStats(props: SVGProps<SVGSVGElement>) {
         ry="12"
       ></rect>
     </svg>
-  )
+  );
 }

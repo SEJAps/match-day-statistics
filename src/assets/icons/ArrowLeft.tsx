@@ -14,5 +14,5 @@ export function ArrowLeft(props: SVGProps<SVGSVGElement>) {
         d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6l6 6z"
       ></path>
     </svg>
-  )
+  );
 }

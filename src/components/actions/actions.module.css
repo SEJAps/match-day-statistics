@@ -1,21 +1,21 @@
 .actions {
   display: grid;
-  gap: .66rem;
+  gap: 0.66rem;
   padding: 2rem 1rem;
   border-top: 2px solid sienna;
   grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
 }
 
 .button {
-  padding: .33rem;
-  border-radius: .15rem;
+  padding: 0.33rem;
+  border-radius: 0.15rem;
   border: 1px solid silver;
   font-weight: 900;
   font-size: 1.2rem;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  color: rgb(255, 255, 255)
+  color: rgb(255, 255, 255);
 }
 
 .download_button {

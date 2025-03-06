@@ -3,13 +3,16 @@ import { useAppDispatch } from "../../store/store";
 import { removeUserLocalStorage } from "../../utils";
 import { logout } from "../../store/slices/userSlice";
 import { SVGP } from "../../types";
+import { useNavigate } from "react-router";
 
 export const Logout: FC<SVGP> = ({ props }) => {
   const dispatch = useAppDispatch();
+  const goTo = useNavigate();
   const handlerLogout = () => {
-    dispatch(logout())
-    removeUserLocalStorage()
-  }
+    dispatch(logout());
+    removeUserLocalStorage();
+    goTo("/inicio");
+  };
   return (
     <svg
       onClick={handlerLogout}
@@ -17,7 +20,7 @@ export const Logout: FC<SVGP> = ({ props }) => {
       viewBox="0 0 14 14"
       width="2em"
       height="2em"
-      strokeWidth={.3}
+      strokeWidth={0.3}
       stroke="currentColor"
       {...props}
     >
@@ -28,5 +31,5 @@ export const Logout: FC<SVGP> = ({ props }) => {
         clipRule="evenodd"
       ></path>
     </svg>
-  )
-}
+  );
+};

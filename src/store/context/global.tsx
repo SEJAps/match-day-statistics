@@ -3,21 +3,18 @@ import { GlobalContext, PropsGlobal } from ".";
 import { useModal } from "../hooks/useModal";
 
 type Props = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 const GlobalCTX: FC<Props> = ({ children }) => {
-
   const value: PropsGlobal = {
-    stat: 'juan',
-    ...useModal()
-  }
+    stat: "juan",
+    ...useModal(),
+  };
 
   return (
-    <GlobalContext.Provider value={value}>
-      {children}
-    </GlobalContext.Provider>
-  )
-}
+    <GlobalContext.Provider value={value}>{children}</GlobalContext.Provider>
+  );
+};
 
-export default GlobalCTX
+export default GlobalCTX;

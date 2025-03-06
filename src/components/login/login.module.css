@@ -1,7 +1,7 @@
 .center {
   display: grid;
   grid-auto-flow: row;
-  grid-template-rows: .8fr 1fr;
+  grid-template-rows: 0.8fr 1fr;
   height: 100dvh;
 }
 
@@ -10,13 +10,12 @@
   padding: 1rem;
   align-items: center;
   justify-content: center;
-
 }
 
 .title {
   text-transform: uppercase;
   animation: scale1 1200ms alternate ease-in-out infinite;
-  text-shadow: 10px 10px 3px rgba(0, 0, 0, .5);
+  text-shadow: 10px 10px 3px rgba(0, 0, 0, 0.5);
   color: var(--color-busine-title);
 }
 
@@ -35,12 +34,11 @@ form.login {
   align-items: center;
 }
 
-form.login>input {
+form.login > input {
   padding: 1rem;
-  border-radius: .33rem;
+  border-radius: 0.33rem;
   border: 1px solid gray;
   font-size: clamp(1.4rem, 2.5vw, 1rem);
-
 }
 
 aside {
@@ -48,15 +46,15 @@ aside {
 }
 
 button.submit {
-  padding: .8rem 1.56rem;
-  border-radius: .33rem;
+  padding: 0.8rem 1.56rem;
+  border-radius: 0.33rem;
   border: 1px solid white;
   background: rgb(255, 83, 83);
   color: white;
   font-size: 1.2rem;
   font-family: "Sarabun", serif;
   font-weight: 700;
-  font-style: normal
+  font-style: normal;
 }
 
 .info {
@@ -68,19 +66,19 @@ button.submit {
   bottom: 0;
   left: 0;
   right: 0;
-  padding-bottom: .33rem;
+  padding-bottom: 0.33rem;
 }
 
-.info>address {
+.info > address {
   font-weight: 600;
-  font-size: .9rem;
+  font-size: 0.9rem;
   display: inline-flex;
   align-items: center;
   gap: 2rem;
 }
 .created_by {
   display: inline-flex;
-  gap: .33rem;
+  gap: 0.33rem;
   color: white;
   font-size: medium;
   font-weight: lighter;
@@ -94,10 +92,8 @@ button.submit {
   }
 }
 @media screen and (width> 768px) {
-  .info>address {
-
+  .info > address {
     font-size: 1.4rem;
-
   }
 }
 
@@ -107,6 +103,6 @@ button.submit {
   }
 
   from {
-    transform: scale(.98);
+    transform: scale(0.98);
   }
 }

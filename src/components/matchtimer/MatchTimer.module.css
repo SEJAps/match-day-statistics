@@ -2,7 +2,7 @@
 
 /* Contenedor principal del temporizador */
 .match_controls {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   text-align: center;
   padding: 20px;
   border-radius: 10px;
@@ -16,11 +16,10 @@
   justify-content: center;
   gap: 10px;
   margin-bottom: 15px;
-
 }
 
 button.btnTime {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 10px 20px;
   font-size: 16px;
@@ -128,7 +127,6 @@ button.btnReset {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-
 }
 
 button.btnReset:hover {

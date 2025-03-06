@@ -25,7 +25,7 @@ const initialState: IntInitialMatchStat = {
 };
 
 const timerSlice = createSlice({
-  name: 'timerSlice',
+  name: "timerSlice",
   initialState,
   reducers: {
     startFirstHalf: (state) => {
@@ -80,5 +80,14 @@ const timerSlice = createSlice({
   },
 });
 
-export const { startFirstHalf, pause, endFirstHalf, startSecondHalf, endSecondHalf, tick, reset, setExtraTime } = timerSlice.actions;
+export const {
+  startFirstHalf,
+  pause,
+  endFirstHalf,
+  startSecondHalf,
+  endSecondHalf,
+  tick,
+  reset,
+  setExtraTime,
+} = timerSlice.actions;
 export default timerSlice.reducer;

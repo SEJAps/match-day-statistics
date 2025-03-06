@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import canvasCSS from './canvas.module.css'
+import canvasCSS from "./canvas.module.css";
 
 interface CanvasProps {
   onCanvasClick: (x: number, y: number) => void;

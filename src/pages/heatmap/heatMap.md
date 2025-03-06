@@ -58,7 +58,7 @@ interface HeatmapProps {
 Ejemplo de personalización:
 tsx
 Copy
-<Heatmap 
+<Heatmap
   width={800}
   height={600}
   colors={['#00ff00', '#ffff00', '#ff0000']}
@@ -139,3 +139,4 @@ Este README incluye:
 6. Información de licencia
 
 Guarda este archivo como `README.md` en la raíz de tu proyecto. Puedes personalizar las secciones según tus necesidades específicas y agregar capturas reales del componente en acción cuando lo implementes. ¿Necesitas ayuda con alguna otra parte del proyecto?
+```

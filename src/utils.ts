@@ -1,7 +1,7 @@
 import jsPDF from "jspdf";
-import autoTable from 'jspdf-autotable'
+import autoTable from "jspdf-autotable";
 import { TStats } from "./types";
-import i18n from "./features/i18n"
+import i18n from "./features/i18n";
 
 const downloadCSV = (stats: TStats) => {
   const { local, guest, localName, guestName } = stats;
@@ -68,32 +68,32 @@ const downloadPDF = (stats: TStats) => {
 
 // storage
 const storage = globalThis.localStorage;
-const userLocalStorage = ({ email, name }: { email: string, name: string }) => {
+const userLocalStorage = ({ email, name }: { email: string; name: string }) => {
   const dataToJson = JSON.stringify({ email, name });
-  storage.setItem("user", dataToJson)
-}
+  storage.setItem("user", dataToJson);
+};
 const getUserLocalStorage = () => {
-  return JSON.parse(storage.getItem("user") as string)
-}
+  return JSON.parse(storage.getItem("user") as string);
+};
 const removeUserLocalStorage = () => {
-  storage.removeItem("user")
-}
+  storage.removeItem("user");
+};
 type DataMatch = TStats & {
   user: {
-    email: string,
-    name: string
-  }
-}
+    email: string;
+    name: string;
+  };
+};
 const createStatsByMatchActive = (match: DataMatch) => {
   const dataToJson = JSON.stringify(match);
-  storage.setItem("macth_stats", dataToJson)
-}
+  storage.setItem("macth_stats", dataToJson);
+};
 const getStatsByMatchActive = () => {
-  return JSON.parse(storage.getItem("macth_stats") as string)
-}
+  return JSON.parse(storage.getItem("macth_stats") as string);
+};
 const removeStatsByMatchActive = () => {
-  storage.removeItem("macth_stats")
-}
+  storage.removeItem("macth_stats");
+};
 export {
   storage,
   downloadCSV,
@@ -103,8 +103,5 @@ export {
   removeUserLocalStorage,
   createStatsByMatchActive,
   getStatsByMatchActive,
-  removeStatsByMatchActive
-}
-
-
-
+  removeStatsByMatchActive,
+};

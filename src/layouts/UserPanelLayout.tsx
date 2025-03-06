@@ -1,5 +1,5 @@
 import { FC } from "react";
-import userPanelCss from './css/user-panel.module.css'
+import userPanelCss from "./css/user-panel.module.css";
 import { statNames } from "../config";
 import { useAppSelector } from "../store/store";
 import MatchTimer from "../components/matchtimer/MatchTimer";
@@ -13,14 +13,15 @@ import { useNavigate } from "react-router";
 // import Icono_gol from "../svg/gol_512x512.svg"
 const UserPanelLayout: FC = () => {
   const { t } = useTranslation();
-  const goTo = useNavigate()
-  const { guestName, localName, local, guest } = useAppSelector(state => state.stats)
+  const goTo = useNavigate();
+  const { guestName, localName, local, guest } = useAppSelector(
+    (state) => state.stats,
+  );
 
   const handlerGoto = (stat: string) => {
-
-    goTo(`/marcas/${stat}`)
-  }
-  const stats = Object.keys(statNames)
+    goTo(`/marcas/${stat}`);
+  };
+  const stats = Object.keys(statNames);
 
   return (
     <Container>
@@ -38,17 +39,24 @@ const UserPanelLayout: FC = () => {
               <Title level={3}>{guestName}</Title>
               <strong className={userPanelCss.goal}>{guest.goals}</strong>
             </article>
-            <aside className={userPanelCss.time}><MatchTimer /></aside>
+            <aside className={userPanelCss.time}>
+              <MatchTimer />
+            </aside>
           </header>
         </section>
         <section className={userPanelCss.gridStatsButtons}>
-          {stats.map(stat => (
-            <IconStat key={stat} onClick={() => handlerGoto(stat)} title={t(stat)} stat={stat} />
+          {stats.map((stat) => (
+            <IconStat
+              key={stat}
+              onClick={() => handlerGoto(stat)}
+              title={t(stat)}
+              stat={stat}
+            />
           ))}
         </section>
       </section>
     </Container>
-  )
-}
+  );
+};
 
-export default UserPanelLayout
+export default UserPanelLayout;

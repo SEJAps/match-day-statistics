@@ -1,14 +1,13 @@
 @import url(./normalize.css);
 @import url(./fonts.css);
 
-
 :root {
   font-family: "Sarabun", serif;
   font-weight: 300;
   font-style: normal;
   line-height: 1.5;
   color-scheme: light dark;
-  font-size: clamp(.9rem, 2.5vw, 1.1rem);
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -31,7 +30,8 @@ h1 {
   font-style: normal;
 }
 
-@media (max-width: 768px) {}
+@media (max-width: 768px) {
+}
 
 @media (prefers-color-scheme: light) {
   :root {
