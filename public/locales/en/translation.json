@@ -28,5 +28,13 @@
   "team": "Team",
   "your_email": "Your email",
   "your_name": "Your name or nickname",
-  "login": "Login"
+  "login": "Login",
+  "right_chance": "Opportunity on the right",
+  "left_chance": "Opportunity on the left",
+  "center_chance": "Opportunity through the center",
+  "ball_stolen_oponent_field": "Ball stolen in the opponent's field",
+  "loss_ball_own_field": "Loss of the ball in own half",
+  "pause": "Pause",
+  "resume": "Resume",
+  "reset_timer": "Reset"
 }

@@ -16,6 +16,7 @@
   justify-content: center;
   gap: 10px;
   margin-bottom: 15px;
+
 }
 
 button.btnTime {
@@ -37,6 +38,37 @@ button.btnTime:disabled {
 
 button.btnTime:hover:not(:disabled) {
   background-color: #45a049;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.btn_pause {
+  background-color: #7cf2f7;
+  color: rgb(19, 18, 18);
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 120px;
+}
+
+.btn_reset {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 120px;
 }
 
 /* Temporizador principal */

@@ -32,7 +32,6 @@ const markSlice = createSlice({
     reducers: {
         createMark: (state, action: PayloadAction<Mark>) => {
             const { payload } = action
-            console.log(payload.team)
             if (payload.team === "local") {
                 state.local = [...state.local, payload.data]
             } else {
@@ -72,5 +71,5 @@ const markSlice = createSlice({
     }
 });
 
-export const { createMark, removeMark, updateMark, resetMarks, removeLastMark} = markSlice.actions;
+export const { createMark, removeMark, updateMark, resetMarks, removeLastMark } = markSlice.actions;
 export default markSlice.reducer;

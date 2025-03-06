@@ -28,5 +28,13 @@
   "team": "Equipo",
   "your_email": "Tu correo electronico",
   "your_name": "Tu nombre o apodo",
-  "login": "Entrar"
+  "login": "Entrar",
+  "right_chance": "Oportunidad por la derecha",
+  "left_chance": "Oportunidad por la izquierda",
+  "center_chance": "Oportunidad por el centro",
+  "ball_stolen_oponent_field": "Balón robado en campo contrario",
+  "loss_ball_own_field": "Pérdida de balón en campo propio",
+  "pause": "Pausar",
+  "resume": "Reanudar",
+  "reset_timer": "Reiniciar"
 }
