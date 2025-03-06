@@ -28,5 +28,13 @@
   "team": "Equip",
   "your_email": "El teu correu electrònic",
   "your_name": "El teu nom o sobrenom",
-  "login": "Entrar"
+  "login": "Entrar",
+  "right_chance": "Oportunitat per la dreta",
+  "left_chance": "Oportunitat per l'esquerra",
+  "center_chance": "Oportunitat pel centre",
+  "ball_stolen_oponent_field": "Pilota robada en camp contrari",
+  "loss_ball_own_field": "Pèrdua de pilota en camp propi",
+  "pause": "Pausar",
+  "resume": "Reprendre",
+  "reset_timer": "Reiniciar"
 }

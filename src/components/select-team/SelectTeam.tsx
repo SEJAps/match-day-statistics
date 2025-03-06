@@ -7,7 +7,6 @@ export const TeamSelect: FC<{teamSelected: (team: TTeam) => void}> = ({teamSelec
   const { localName, guestName } = useAppSelector((state: RootState) => state.stats)
   return (
     <div className={teamSelectCSS.container}>
-   
       <button className={teamSelectCSS.navLink} onClick={() => teamSelected("local")}>
         {localName}
       </button>

@@ -4,7 +4,7 @@ import campo from "../../assets/webp/zonas_campo_new.webp"
 import marcasCSS from "./marcas.module.css";
 import { Link, useNavigate, useParams } from "react-router";
 import { TeamSelect } from "../../components/select-team/SelectTeam";
-// import { IconMark } from "../../assets/webp/Webp";
+import marcador_campof from '../../assets/svg/marcador_campof_512x512.svg'
 import { useAppDispatch, useAppSelector } from "../../store/store";
 import { createMark } from "../../store/slices/markSlice";
 import { TeamStats, TTeam } from "../../types";
@@ -28,11 +28,7 @@ const Marcas: FC = () => {
 
   const handlerTeamSelected = (team: TTeam) => {
     setTeam(() => team)
-    console.log(team)
   }
-  // const handleEditStat = () => {
-  //   alert("Editar estadistica")
-  // };
 
   useEffect(() => { }, [local, guest, handlerTeamSelected])
 
@@ -53,29 +49,34 @@ const Marcas: FC = () => {
           </Link>
       }
       {team === "all" && <TeamSelect teamSelected={handlerTeamSelected} />}
-      {team === "local" ? local.map((mark, index) => {
+      {team === "local" && local.map((mark, index) => {
         return (
           <div
             key={index}
             style={{
-              left: `${mark.x}px`, top: `${mark.y}px`, transform: "translate(-50%, -50%)", position: 'absolute', display: 'flex', flexDirection: 'column', alignItems: 'center'
+              left: `${mark.x}px`, 
+              top: `${mark.y}px`, 
+              transform: "translate(-50%, -50%)", 
+              position: 'absolute',
+              display: 'flex', 
+              flexDirection: 'column', 
+              alignItems: 'center',
             }}
           >
-            {/* <IconMark onClick={handleEditStat} key={stat} stat={stat as string} /> */}
-            {team}
-            {stat}
+            <span style={{textTransform: 'capitalize',  fontWeight: 600, fontSize: '.8rem'}}>{mark.stat}</span>
+            <img src={marcador_campof} alt={mark.stat} title={mark.stat} width={32}/>
           </div>
         )
-      }) : guest.map((mark, index) => (
+      }) }
+      {team === "guest" && guest.map((mark, index) => (
         <div
           key={index}
           style={{
             left: `${mark.x}px`, top: `${mark.y}px`, transform: "translate(-50%, -50%)", position: 'absolute', display: 'flex', flexDirection: 'column', alignItems: 'center'
           }}
         >
-          {/* <IconMark onClick={handleEditStat} key={stat} stat={stat as string} /> */}
-          {team}
-          {stat}
+           <span style={{textTransform: 'capitalize',  fontWeight: 600, fontSize: '.8rem'}}>{mark.stat}</span>
+          <img src={marcador_campof} alt={mark.stat} title={mark.stat} width={32}/>
         </div>
       ))}
     </div>);

@@ -4,7 +4,11 @@ import check_verde from "./check_verde.webp"
 import Icono_falta from "../svg/falta_512x512.svg"
 import Icono_falta_peligrosa from "../svg/falta_peligrosa_512x512.svg"
 import Icono_fuera_de_juego from "../svg/fuera_de juego_512x512.svg"
-
+import ocasion_centro from "../svg/ocasion_centro_512x512.svg"
+import ocasion_derecha from "../svg/ocasion_derecha_512x512.svg"
+import ocasion_izquierda from "../svg/ocasion_izquierda_512x512.svg"
+import perdida_campo_propio from "../svg/perdida_campo_propio_512x512.svg"
+import recuperacion_campo_rival from "../svg/recuperacion_campo_rival_512x512.svg"
 import Icono_tiro_3_palos from "../svg/tiro_a_puerta 512x512.svg"
 import Icono_tiro_fuera from "../svg/tiro_fuera_512x512.svg"
 import Icono_parada from "../svg/parada_512x512.svg"
@@ -72,6 +76,26 @@ const statIcons = [
   {
     stat: "shoot_out",
     src: Icono_tiro_fuera
+  },
+  {
+    stat: "right_chance",
+    src: ocasion_derecha
+  },
+  {
+    stat: "left_chance",
+    src: ocasion_izquierda
+  },
+  {
+    stat: "center_chance",
+    src: ocasion_centro
+  },
+  {
+    stat: "ball_stolen_oponent_field",
+    src: perdida_campo_propio
+  },
+  {
+    stat: "loss_ball_own_field",
+    src: recuperacion_campo_rival
   }
 ]
 const ImageWebp: FC<TImage> = ({ src, alt, onClick, title, image_down }) => {

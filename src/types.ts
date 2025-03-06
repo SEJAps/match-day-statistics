@@ -14,6 +14,11 @@ export type InitialStats = {
   goal_cahances_in: number | string,
   merit_stop: number | string,
   shoot_out: number | string,
+  right_chance: number | string,
+  left_chance: number | string,
+  center_chance: number | string,
+  ball_stolen_oponent_field: number | string,
+  loss_ball_own_field: number | string
 }
 export interface TeamStats {
   goals: number,
@@ -25,10 +30,14 @@ export interface TeamStats {
   fouls: number,
   dangerous_fouls: number,
   offsides: number,
-
   goal_cahances_in: number,
   merit_stop: number,
   shoot_out: number,
+  right_chance: number,
+  left_chance: number,
+  center_chance: number,
+  ball_stolen_oponent_field: number,
+  loss_ball_own_field: number
 }
 export type TTeam = "all" | "local" | "guest"
 export type Props = {
