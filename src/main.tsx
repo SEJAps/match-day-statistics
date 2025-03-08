@@ -8,10 +8,12 @@ import { $ID, root } from "./utils/index.ts";
 import { StrictMode } from "react";
 import { BrowserRouter } from "react-router";
 import GlobalCTX from "./store/context/global.tsx";
+import { AuthProvider } from "./store/context/auth.tsx";
 
 const app = root($ID(ROOT));
 
 app.render(
+  <AuthProvider>
   <Provider store={store}>
     <GlobalCTX>
       <BrowserRouter>
@@ -20,5 +22,6 @@ app.render(
         </StrictMode>
       </BrowserRouter>
     </GlobalCTX>
-  </Provider>,
+  </Provider>
+  </AuthProvider>,
 );

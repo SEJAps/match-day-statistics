@@ -64,3 +64,13 @@ export type DataMatch = TStats & {
 export type SVGP = {
   props?: SVGProps<SVGSVGElement>;
 };
+
+export interface FormDataSignUpWithEmailAndPass {
+  email: string;
+  password?: string; // Password es opcional en FormData pero obligatorio al registrar
+  nombre: string;
+  club: string;
+  pais: string;
+  codigoPostal: string;
+  categoria: string;
+}
