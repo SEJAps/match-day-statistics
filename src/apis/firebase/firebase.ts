@@ -8,7 +8,7 @@ import {
   signInWithPopup,
   FacebookAuthProvider,
   GithubAuthProvider,
-  createUserWithEmailAndPassword
+  createUserWithEmailAndPassword, signInWithEmailAndPassword
 } from "firebase/auth";
 
 const app = initializeApp(firebaseConfig);
@@ -34,6 +34,7 @@ export {
   conectateConGoogle,
   getFirebaseErrorMessage,
   createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
   signInWithPopup,
   Providers
 };

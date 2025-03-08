@@ -14,14 +14,14 @@ const app = root($ID(ROOT));
 
 app.render(
   <AuthProvider>
-  <Provider store={store}>
-    <GlobalCTX>
-      <BrowserRouter>
-        <StrictMode>
-          <App />
-        </StrictMode>
-      </BrowserRouter>
-    </GlobalCTX>
-  </Provider>
+    <Provider store={store}>
+      <GlobalCTX>
+        <BrowserRouter>
+          <StrictMode>
+            <App />
+          </StrictMode>
+        </BrowserRouter>
+      </GlobalCTX>
+    </Provider>
   </AuthProvider>,
 );

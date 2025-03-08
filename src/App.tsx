@@ -11,6 +11,8 @@ import About from "./pages/about/About";
 import Stats from "./pages/stats/StatsPage";
 import Account from "./pages/account/Account";
 import PrivateRoute from "./pages/PrivateRoute";
+import SignUpUserPage from "./pages/account/SignUpUserPage";
+
 const App: FC = () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -19,6 +21,7 @@ const App: FC = () => {
       console.log("Usuario no logueado");
     }
   });
+
   return (
     <Routes>
       <Route path="/" element={<LayoutPublic />}>
@@ -29,10 +32,11 @@ const App: FC = () => {
         <Route path="marcas/:stat" element={<Marcas />} />
         <Route path="heatmap/:team" element={<HeatMap />} />
         <Route path="login" element={<LoginPage />} />
+        <Route path="registro" element={<SignUpUserPage />} />
         <Route path="*" element={<h1>Page not found¡</h1>} />
       </Route>
       <Route path="/private" element={<PrivateRoute />} >
-        <Route path="profile" element={<h1>Page not found¡</h1>} />
+        <Route path="profile" element={<h1>Profile</h1>} />
       </Route>
     </Routes>
   );

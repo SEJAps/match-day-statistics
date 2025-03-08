@@ -74,3 +74,8 @@ export interface FormDataSignUpWithEmailAndPass {
   codigoPostal: string;
   categoria: string;
 }
+export interface FormDataSignInWithEmailAndPass {
+  email: string;
+  password: string;
+
+}

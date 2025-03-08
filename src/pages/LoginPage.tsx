@@ -1,15 +1,13 @@
-import { FC, useEffect } from "react";
+import {FC} from "react";
 import { Login } from "../components/login/Login";
-import { useNavigate } from "react-router";
-import { RootState, useAppSelector } from "../store/store";
 import { SelectLanguage } from "../components/select-language/SelectLanguage";
 
 export const LoginPage: FC = () => {
-  const navigation = useNavigate();
-  const { authentificate } = useAppSelector((state: RootState) => state.user);
-  useEffect(() => {
-    if (authentificate) navigation("/");
-  }, [authentificate, navigation]);
+  // const navigation = useNavigate();
+  // const { authentificate } = useAppSelector((state: RootState) => state.user);
+  // useEffect(() => {
+  //   if (authentificate) navigation("/");
+  // }, [authentificate, navigation]);
   return (
     <>
       <div
