@@ -1,6 +1,7 @@
 import { FormEvent, useState } from "react";
 import { FormDataSignUpWithEmailAndPass } from "../../../types";
-import { auth, createUserWithEmailAndPassword, db, doc, getFirebaseErrorMessage, setDoc } from '../../../apis/firebase/firebase';
+import { auth, createUserWithEmailAndPassword, db, doc, getFirebaseErrorMessage, sendEmailVerification, setDoc } from '../../../apis/firebase/firebase';
+
 
 const useSignup = () => {
     const [formData, setFormData] = useState<FormDataSignUpWithEmailAndPass>({
@@ -48,7 +49,7 @@ const useSignup = () => {
             categoria: categoria
             // Puedes añadir más campos si necesitas
           });
-    
+          sendEmailVerification(user); // Envia email de verificación
           setSuccessMessage("Usuario registrado con éxito!");
           // Limpia el formulario si el registro es exitoso (opcional)
           setFormData({

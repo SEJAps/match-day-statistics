@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Link } from "react-router";
-import { MDSLogo } from "../../components/Logo";
+import { MDSLogo } from "../../components/mdslogo/MDSLogo";
 import User from "../../components/user/User";
 import aboutCSS from "./css/about.module.css";
 

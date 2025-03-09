@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import signupCSS from './css/signin_user.module.css';
 import { useSignup } from './hooks/useSignup';
-import { MDSLogo } from '../../components/Logo';
+import { MDSLogo } from '../../components/mdslogo/MDSLogo';
 
 const SignUpUserPage: FC = () => {
     const { formData, handleChange, handleSubmit, successMessage, error } = useSignup();

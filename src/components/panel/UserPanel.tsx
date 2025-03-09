@@ -1,20 +1,17 @@
 import { FC } from "react";
-import { RootState, useAppSelector } from "../../store/store";
 import userPanelCss from "./user_panel.module.css";
 import { Container } from "../container/Container";
 import { Sticky } from "../Sticky";
-// import { TILE_AP } from "../../config";
 import { Logout } from "../../assets/icons/Logout";
 import { TrashStats } from "../../assets/icons/TrashStats";
 import { Title } from "../title/Title";
-// import logo from "../../assets/svg/match_day_stats_logo.svg"
-import logo2 from "../../assets/webp/MDS_blanco.webp";
-export const UserPanel: FC = () => {
-  const {  user } = useAppSelector(
-    (state: RootState) => state.user,
-  );
-  
+import { MDSLogo } from "../mdslogo/MDSLogo";
+import { useAuth } from "../../store/context/auth";
 
+export const UserPanel: FC = () => {
+ 
+  const {usuario} = useAuth();
+  
   return (
     <Sticky
       styles={{
@@ -24,12 +21,11 @@ export const UserPanel: FC = () => {
       <Container>
         <header className={userPanelCss.header}>
           <Title className={userPanelCss.busineTitle} level={1}>
-            {/* {TILE_AP} */}
-            <img src={logo2} alt="" width={256} height={128} />
+            <MDSLogo width={256} height={128} />            
           </Title>
           <nav className={userPanelCss.nav}>
-            <i className={userPanelCss.name} title={user.name}>
-              {user.name}
+            <i className={userPanelCss.name} title={usuario?.email as string} >
+              {usuario?.email}
             </i>
             <aside className={userPanelCss.userActions}>
               <i title="Borrar estadísticas">

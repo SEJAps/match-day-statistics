@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { MDSLogo } from "../../components/Logo";
+import { MDSLogo } from "../../components/mdslogo/MDSLogo";
 import accountCSS from "./css/account.module.css";
 import { Link } from "react-router";
 interface AccountProps {

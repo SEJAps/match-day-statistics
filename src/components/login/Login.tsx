@@ -45,26 +45,12 @@ export const Login: FC = () => {
           email: '',
           password: ''
         }))
-        goTo("/stats");
+        goTo("/private/person-area");
       })
       .catch((firebaseError) => {
         console.error("Error inesperado:", firebaseError);
         setError(getFirebaseErrorMessage(firebaseError.code));
       });
-
-    // dispatch(
-    //   login({
-    //     user: {
-    //       email: formControl.get("email"),
-    //       name: formControl.get("name"),
-    //     },
-    //   }),
-    // );
-    // userLocalStorage({
-    //   email: formControl.get("email") as string,
-    //   name: formControl.get("name") as string,
-    // });
-    // globalThis.location.href = "/";
   };
 
   return (

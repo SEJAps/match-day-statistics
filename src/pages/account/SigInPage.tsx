@@ -1,8 +1,8 @@
 import {FC} from "react";
-import { Login } from "../components/login/Login";
-import { SelectLanguage } from "../components/select-language/SelectLanguage";
+import { SelectLanguage } from "../../components/select-language/SelectLanguage";
+import { Login } from "../../components/login/Login";
 
-export const LoginPage: FC = () => {
+export const SigInPage: FC = () => {
   // const navigation = useNavigate();
   // const { authentificate } = useAppSelector((state: RootState) => state.user);
   // useEffect(() => {

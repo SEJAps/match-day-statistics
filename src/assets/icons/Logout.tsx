@@ -1,17 +1,10 @@
 import { FC } from "react";
-import { useAppDispatch } from "../../store/store";
-import { removeUserLocalStorage } from "../../utils";
-import { logout } from "../../store/slices/userSlice";
 import { SVGP } from "../../types";
-import { useNavigate } from "react-router";
+import { auth, signOut } from "../../apis/firebase/firebase";
 
 export const Logout: FC<SVGP> = ({ props }) => {
-  const dispatch = useAppDispatch();
-  const goTo = useNavigate();
   const handlerLogout = () => {
-    dispatch(logout());
-    removeUserLocalStorage();
-    goTo("/inicio");
+    signOut(auth);
   };
   return (
     <svg

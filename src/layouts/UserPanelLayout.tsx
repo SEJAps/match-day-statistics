@@ -4,9 +4,7 @@ import { statNames } from "../config";
 import { useAppSelector } from "../store/store";
 import MatchTimer from "../components/matchtimer/MatchTimer";
 import { Title } from "../components/title/Title";
-import { Container } from "../components/container/Container";
 import { useTranslation } from "react-i18next";
-import { SelectLanguage } from "../components/select-language/SelectLanguage";
 import { IconStat } from "../assets/webp/Webp";
 import { useNavigate } from "react-router";
 // import NewMatchTimer from "../components/matchtimer/NewMatchTimer";
@@ -24,8 +22,8 @@ const UserPanelLayout: FC = () => {
   const stats = Object.keys(statNames);
 
   return (
-    <Container>
-      <SelectLanguage />
+    <>
+     
       <section className={userPanelCss.panel}>
         <section className={userPanelCss.content}>
           <header className={userPanelCss.teams}>
@@ -55,7 +53,7 @@ const UserPanelLayout: FC = () => {
           ))}
         </section>
       </section>
-    </Container>
+    </>
   );
 };
 

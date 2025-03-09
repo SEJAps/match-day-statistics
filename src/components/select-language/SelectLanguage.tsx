@@ -13,7 +13,7 @@ export const SelectLanguage: FC = () => {
     i18n.changeLanguage(`${formData.get("lang")}`);
   };
   return (
-    <div className={selecLngCSS.lang}>
+    <section className={selecLngCSS.lang}>
       <label className={selecLngCSS.label} htmlFor="lang">
         <strong className={selecLngCSS.strong}>{t("select_language")}</strong>
         <select
@@ -28,6 +28,6 @@ export const SelectLanguage: FC = () => {
           <option value="fr">FR</option>
         </select>
       </label>
-    </div>
+    </section>
   );
 };

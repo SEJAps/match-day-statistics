@@ -8,7 +8,7 @@ const getFirebaseErrorMessage = (errorCode: string): string => {
     case 'auth/weak-password':
       return 'La contraseña debe tener al menos 6 caracteres.';
     case 'auth/invalid-credential':
-      return 'Datos invalidos';
+      return 'El email o contraseña no son válidos.';
     // Añade más casos según los errores que quieras manejar
     default:
       return 'Error al registrar usuario. Inténtalo de nuevo más tarde.';
