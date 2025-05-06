@@ -9,6 +9,7 @@ import { useTranslation } from "react-i18next";
 import { SelectLanguage } from "../components/select-language/SelectLanguage";
 import { IconStat } from "../assets/webp/Webp";
 import { useNavigate } from "react-router";
+import CurrentTime from "../components/matchtimer/CurrentTIme";
 // import NewMatchTimer from "../components/matchtimer/NewMatchTimer";
 // import Icono_gol from "../svg/gol_512x512.svg"
 const UserPanelLayout: FC = () => {
@@ -24,9 +25,13 @@ const UserPanelLayout: FC = () => {
 
   return (
     <Container>
-      <SelectLanguage />
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <SelectLanguage />
+        <CurrentTime />
+      </div>
       <section className={userPanelCss.panel}>
         <section className={userPanelCss.content}>
+
           <header className={userPanelCss.teams}>
             <article className={userPanelCss.team}>
               <Title level={2}>{t("local")}</Title>
@@ -38,7 +43,7 @@ const UserPanelLayout: FC = () => {
               <Title level={3}>{guestName}</Title>
               <strong className={userPanelCss.goal}>{guest.goals}</strong>
             </article>
-            {/* <aside className={userPanelCss.time}><MatchTimer /></aside> */}
+
           </header>
         </section>
         <section className={userPanelCss.gridStatsButtons}>
