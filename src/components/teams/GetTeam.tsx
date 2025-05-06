@@ -3,14 +3,15 @@ import LocalTeam from "../../components/teams/LocalTeam";
 import { TTeam } from "../../types";
 
 interface Props {
-    team: TTeam
+    team: TTeam,
+    stat?: string
 }
 
-const GetTeam: React.FC<Props> = ({ team }) => {
+const GetTeam: React.FC<Props> = ({ team, stat }) => {
     return (
         <>
-            {team === "local" && <LocalTeam />}
-            {team === "guest" && <GuestTeam />}
+            {team === "local" && <LocalTeam stat={stat} />}
+            {team === "guest" && <GuestTeam stat={stat} />}
         </>
     )
 }

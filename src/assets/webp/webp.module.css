@@ -1,7 +1,7 @@
 .image,
 .imageStat {
-  width: 120px;
-  height: 120px;
+  width: 96px;
+  height: 96px;
   object-fit: contain;
   object-position: center;
   padding: 0;
@@ -12,7 +12,6 @@
 .imageStat {
   width: 32px;
   height: 32px;
-
 }
 
 .image_down {
@@ -42,12 +41,20 @@
 
 .btn {
   display: inline-flex;
-  flex-direction: column;
+  width: 100%;
+  height: 100%;
   border: 1px solid transparent;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  font-size: x-small;
   padding: 0;
   margin: 0;
+  background-color: transparent;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    padding: 0;
+    margin: 0;
+    transition: scale 200ms ease-in-out;
+  }
 }

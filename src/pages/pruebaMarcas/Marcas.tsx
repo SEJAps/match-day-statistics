@@ -35,7 +35,7 @@ const Marcas: FC = () => {
       <MdsCanvas onCanvasClick={handleCanvasClick} />
       <ViewHeatMapLinks viewHeatMap={viewHeatMap} team={team} />
       {team === "all" && <TeamSelect teamSelected={handlerTeamSelected} />}
-      <GetTeam team={team} />
+      <GetTeam team={team} stat={stat} />
     </div>
   );
 };

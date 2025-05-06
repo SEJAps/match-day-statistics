@@ -43,11 +43,9 @@
 .gridStatsButtons {
   grid-column: span 2;
   display: grid;
- 
-  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
-  padding: .33rem;
-  gap: .33rem;
-  height: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+  gap: 1rem;
+  padding: 0% 1rem;
 }
 
 .statButton {
