@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 import { SelectLanguage } from "../components/select-language/SelectLanguage";
 import { IconStat } from "../assets/webp/Webp";
 import { useNavigate } from "react-router";
-import CurrentTime from "../components/matchtimer/CurrentTIme";
+import CurrentTime from "../components/matchtimer/CurrentTime";
 // import NewMatchTimer from "../components/matchtimer/NewMatchTimer";
 // import Icono_gol from "../svg/gol_512x512.svg"
 const UserPanelLayout: FC = () => {
