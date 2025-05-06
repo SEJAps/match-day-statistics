@@ -1,5 +1,5 @@
 import { FC, lazy, Suspense } from 'react';
-import { Routes, Route, BrowserRouter } from "react-router";
+import { Routes, Route } from "react-router";
 import { LoginPage } from './pages/LoginPage';
 import ProtectedRoute from './pages/ProtectedRoutes';
 
