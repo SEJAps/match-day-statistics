@@ -6,18 +6,13 @@
 .label {
   display: inline-flex;
   align-items: center;
-  gap: 1rem;
-  padding: 0 1rem;
+  padding-left: 1rem;
   font-size: small;
-}
-
-.strong {
-  font-weight: 900;
 }
 
 .select {
   border: 1px solid black;
   border-radius: 4px;
-  padding: .33rem .5rem;
-  font-size: large;
+  padding: .33rem;
+  font-size: small;
 }

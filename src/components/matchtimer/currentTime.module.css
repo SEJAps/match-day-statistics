@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+  gap: .33rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: .33rem;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 10px;
+  background: transparent;
+  border: 2px solid white;
+  font-size: medium;
+  font-weight: 700;
+}
+
+.start {
+  background: rgb(49, 56, 49);
+  color: white;
+  font-size: large;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: .5rem;
+  text-align: center;
+  border: 1px solid white;
+}
+
+.pause {
+  background: rgb(0, 0, 255);
+  color: white;
+  font-size: large;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: .5rem;
+  text-align: center;
+  border: 1px solid white;
+}
+
+.resumeTimer {
+  background: rgb(0, 255, 0);
+  color: white;
+  font-size: large;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: .5rem;
+  text-align: center;
+  border: 1px solid white;
+}
+
+.resetTimer {
+  background: rgb(255, 0, 0);
+  color: white;
+  font-size: large;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: .5rem;
+  text-align: center;
+  border: 1px solid white;
+}

@@ -1,10 +1,9 @@
-import { useTranslation } from 'react-i18next';
 import i18n from '../../features/i18n';
 import selecLngCSS from './select-language.module.css'
 import { FC, FormEvent } from 'react'
 
 export const SelectLanguage: FC = () => {
-  const { t } = useTranslation();
+
   const handlerInput = (event: FormEvent<HTMLSelectElement>) => {
     const value: string = (event.target as HTMLSelectElement).value;
     const formData = new FormData()
@@ -14,7 +13,6 @@ export const SelectLanguage: FC = () => {
   }
   return (<div className={selecLngCSS.lang}>
     <label className={selecLngCSS.label} htmlFor="lang">
-      <strong className={selecLngCSS.strong}>{t('select_language')}</strong>
       <select className={selecLngCSS.select} id="lang" name="lang" onInput={handlerInput}>
         <option value="es">ES</option>
         <option value="ca">CAT</option>
