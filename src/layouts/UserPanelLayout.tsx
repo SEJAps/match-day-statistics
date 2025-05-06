@@ -2,16 +2,14 @@ import { FC } from "react";
 import userPanelCss from './css/user-panel.module.css'
 import { statNames } from "../config";
 import { useAppSelector } from "../store/store";
-// import MatchTimer from "../components/matchtimer/MatchTimer";
 import { Title } from "../components/title/Title";
 import { Container } from "../components/container/Container";
 import { useTranslation } from "react-i18next";
 import { SelectLanguage } from "../components/select-language/SelectLanguage";
 import { IconStat } from "../assets/webp/Webp";
 import { useNavigate } from "react-router";
-import CurrentTime from "../components/matchtimer/CurrentTime";
-// import NewMatchTimer from "../components/matchtimer/NewMatchTimer";
-// import Icono_gol from "../svg/gol_512x512.svg"
+import Time from "../components/matchtimer/Time";
+
 const UserPanelLayout: FC = () => {
   const { t } = useTranslation();
   const goTo = useNavigate()
@@ -27,7 +25,7 @@ const UserPanelLayout: FC = () => {
     <Container>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <SelectLanguage />
-        <CurrentTime />
+        <Time />
       </div>
       <section className={userPanelCss.panel}>
         <section className={userPanelCss.content}>
