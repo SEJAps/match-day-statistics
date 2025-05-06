@@ -1,7 +1,6 @@
 .header {
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
   background-color: #353d47;
 }
 
@@ -20,7 +19,7 @@
 }
 
 .name {
-  font-size: large;
+  font-size: medium;
   font-weight: 600;
 }
 

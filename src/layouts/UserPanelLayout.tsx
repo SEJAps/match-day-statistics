@@ -2,7 +2,7 @@ import { FC } from "react";
 import userPanelCss from './css/user-panel.module.css'
 import { statNames } from "../config";
 import { useAppSelector } from "../store/store";
-import MatchTimer from "../components/matchtimer/MatchTimer";
+// import MatchTimer from "../components/matchtimer/MatchTimer";
 import { Title } from "../components/title/Title";
 import { Container } from "../components/container/Container";
 import { useTranslation } from "react-i18next";
@@ -17,7 +17,7 @@ const UserPanelLayout: FC = () => {
   const { guestName, localName, local, guest } = useAppSelector(state => state.stats)
 
   const handlerGoto = (stat: string) => {
-
+    console.log("Redirecting to stat:", stat)
     goTo(`/marcas/${stat}`)
   }
   const stats = Object.keys(statNames)
@@ -38,7 +38,7 @@ const UserPanelLayout: FC = () => {
               <Title level={3}>{guestName}</Title>
               <strong className={userPanelCss.goal}>{guest.goals}</strong>
             </article>
-            <aside className={userPanelCss.time}><MatchTimer /></aside>
+            {/* <aside className={userPanelCss.time}><MatchTimer /></aside> */}
           </header>
         </section>
         <section className={userPanelCss.gridStatsButtons}>

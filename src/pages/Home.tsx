@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Actions } from '../components/actions/Actions';
-import { Table } from '../components/table/Table';
+// import { Table } from '../components/table/Table';
 import { RootState, useAppSelector } from '../store/store';
 import { UserPanel } from '../components/panel/UserPanel';
 import TeamInput from '../components/create-stats/TeamInput';
@@ -17,8 +17,7 @@ export const Home: FC = () => {
       {existStats &&
         <>
           <UserPanelLayout />
-          {/* <NewTable /> */}
-          <Table />
+          {/* <Table /> */}
           <Actions />
         </>
       }

@@ -47,8 +47,7 @@ export const Login: FC = () => {
               <img src={logo} alt="logo" width={128} height={96} />
               <Link className="email" to={`mailto:${EMAIL_BUSINESS}`}>{EMAIL_BUSINESS}</Link>
             </address>
-           <strong className={loginCSS.created_by}>&copy; <time dateTime="2024-02-01">2024</time> Creado por <NavLink to={`mailto:}`}>Sergio Lopez</NavLink> y <NavLink to={`mailto:}`}>Juan Valdivia</NavLink> </strong>
-           
+            <strong className={loginCSS.created_by}>&copy; <time dateTime="2024-02-01">2024</time> Creado por <NavLink to={`mailto:}`}>Sergio Lopez</NavLink> y <NavLink to={`mailto:}`}>Juan Valdivia</NavLink> </strong>
           </footer>
         </article>
       </section >

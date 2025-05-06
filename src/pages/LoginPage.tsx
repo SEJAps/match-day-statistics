@@ -20,7 +20,7 @@ export const LoginPage: FC = () => {
         display: 'flex',
         justifyContent: 'end',
         alignItems: 'center',
-        height: '60px'
+        height: '60px',
       }}>
         <SelectLanguage />
       </div>

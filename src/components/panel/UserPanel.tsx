@@ -21,8 +21,8 @@ export const UserPanel: FC = () => {
       <Container>
         <header className={userPanelCss.header}>
           <Title className={userPanelCss.busineTitle} level={1}>
-          {/* {TILE_AP} */}
-          <img src={logo2} alt="" width={256} height={128}/>
+            {/* {TILE_AP} */}
+            <img src={logo2} alt="" width={128} height={64} />
           </Title>
           <nav className={userPanelCss.nav}>
             <i className={userPanelCss.name} title={user.name}>{user.name}</i>
