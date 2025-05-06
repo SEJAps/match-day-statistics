@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import currentTimeCSS from './CurrentTime.module.css';
+import currentTimeCSS from './currentTime.module.css';
 const TIMER_KEY = 'timer_end';
 const SCHEDULED_MS = 45 * 60 * 1000; // 45 minutes in ms
 
@@ -9,7 +9,7 @@ interface Time {
     seconds: string;
 }
 
-const Time: React.FC = () => {
+const CurrentTime: React.FC = () => {
     const [time, setTime] = useState<Time>({ hours: '00', minutes: '00', seconds: '00' });
     const [remaining, setRemaining] = useState<number | null>(null);
     const [paused, setPaused] = useState(false);
@@ -162,4 +162,4 @@ const Time: React.FC = () => {
     );
 };
 
-export default Time;
+export default CurrentTime;
