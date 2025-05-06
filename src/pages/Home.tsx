@@ -7,7 +7,7 @@ import TeamInput from '../components/create-stats/TeamInput';
 import Layout from "../layouts/Layout";
 import UserPanelLayout from "../layouts/UserPanelLayout";
 
-export const Home: FC = () => {
+const Home: FC = () => {
   const { existStats } = useAppSelector((state: RootState) => state.stats)
   const { authentificate } = useAppSelector((state: RootState) => state.user);
   return authentificate && (
@@ -24,3 +24,5 @@ export const Home: FC = () => {
     </Layout>
   )
 }
+
+export default Home
