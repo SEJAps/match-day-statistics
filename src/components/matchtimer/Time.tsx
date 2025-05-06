@@ -9,7 +9,7 @@ interface Time {
     seconds: string;
 }
 
-const CurrentTime: React.FC = () => {
+const Time: React.FC = () => {
     const [time, setTime] = useState<Time>({ hours: '00', minutes: '00', seconds: '00' });
     const [remaining, setRemaining] = useState<number | null>(null);
     const [paused, setPaused] = useState(false);
@@ -162,4 +162,4 @@ const CurrentTime: React.FC = () => {
     );
 };
 
-export default CurrentTime;
+export default Time;
